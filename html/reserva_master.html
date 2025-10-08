@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reservar Suíte Master</title>
+    <link rel="stylesheet" href="../css/quartos.css">
+    <link href="https://db.onlinewebfonts.com/c/6ab889bdda7be21423a47e6deea43f6a?family=Mr+Darcy+W01+Regular"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="menu1">
+                <h2><a href="pagina_inicial.html">Início</a></h2>
+                <h2><a href="reservas.html">Reservas</a></h2>
+                <h2><a href="avaliacoes.html">Avaliações</a></h2>
+                <h2><a href="localizacao.html">Localização</a></h2>
+            </div>
+
+            <div class="hotel">
+                <img src="../images/hazbin.png" alt="hotel">
+            </div>
+
+            <div class="menu2">
+                <h2><a href="contato.html">Contato</a></h2>
+                <h2><a href="sobre_nos.html">Sobre Nós</a></h2>
+                <h2><a href="programacao.html">Programação</a></h2>
+                <h2><a href="duvidas.html">Dúvidas</a></h2>
+            </div>
+        </div>
+    </header>
+
+    <main class="quartos-container">
+        <h1>Reservar Suíte Master</h1>
+
+        <form action="pagamento.html" method="GET" class="info">
+            <label for="checkin">Data de Entrada:</label>
+            <input type="date" id="checkin" name="checkin" required>
+
+            <label for="checkout">Data de Saída:</label>
+            <input type="date" id="checkout" name="checkout" required>
+
+            <label for="parcelas">Número de Parcelas:</label>
+            <select id="parcelas" name="parcelas" required>
+                <option value="1">1x de R$1.929,00(sem juros)</option>
+                <option value="2">2x de R$964,50</option>
+                <option value="3">3x de R$643,00</option>
+                <option value="4">4x de R$482,25</option>
+                <option value="5">5x de R$385,80</option>
+                <option value="6">6x de R$321,50</option>
+                <option value="7">7x de R$275,60</option>
+                <option value="8">8x de R$241,10</option>
+                <option value="9">9x de R$214,30</option>
+                <option value="10">10x de R$192,90</option>
+                <option value="11">11x de R$175,40</option>
+                <option value="12">12x de R$160,70</option>
+            </select>
+
+            <p><strong>Informações sobre o serviço de quarto:</strong></p>
+            <ul>
+                <li>Disponível das 7h às 22h.</li>
+                <li>Pedidos pelo telefone interno do quarto.</li>
+                <li>Menu disponível no quarto e pelo QR code.</li>
+            </ul>
+
+            <img src="../images/qr.png" alt="QR Code" class="code-image">
+
+            <input type="hidden" name="quarto" value="Master">
+            <input type="hidden" name="preco" value="500">
+
+            <button type="submit">Ir para Pagamento</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; Project designed by Charlie Morningstar, the Princess of Hell, and directed by Alastor, the Radio
+            Demon.</p>
+        <p>
+            <a href="#">Termos de Uso</a> |
+            <a href="#">Política de Privacidade</a> |
+            <a href="#">Contato</a>
+        </p>
+        <div class="logout-container">
+            <a href="login.html" class="logout">Logout</a>
+        </div>
+    </footer>
+
+    <script src="../js/mains.js/main.js"></script>
+    <script type="module" src="../js/mains.js/vericacao.js"></script>
+</body>
+
+</html>

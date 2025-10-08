@@ -1,0 +1,255 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(../images/wallpaper.png);
+    background-size: cover;
+}
+
+header {
+    background-color: rgb(51, 24, 24);
+    color: white;
+     text-shadow: rgb(240, 32, 118) 2px 2px 4px,
+                 rgb(240, 32, 118) -2px -2px 4px,
+                 rgb(240, 32, 118) 2px -2px 4px,
+                 rgb(240, 32, 118) -2px 2px 4px;
+    padding: 10px 0;
+    border-bottom: 2px solid rgb(240, 32, 118);
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+header a:hover {
+    color: black;
+     text-shadow: rgb(240, 32, 118) 2px 2px 4px,
+                 rgb(240, 32, 118) -2px -2px 4px,
+                 rgb(240, 32, 118) 2px -2px 4px,
+                 rgb(240, 32, 118) -2px 2px 4px;
+}
+
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-left: 90px;
+}
+
+.menu1{
+    display: flex;
+    gap: 25px;
+    font-family: 'Mr Darcy W01 Regular';
+    font-size: 20px;
+    white-space: nowrap;
+    margin-right: 30px;
+}
+
+.menu2{
+    display: flex;
+    gap: 25px;
+    font-family: 'Mr Darcy W01 Regular';
+    font-size: 20px;
+    justify-content: right;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.hotel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-left: -20px;
+}
+
+.hotel img {
+    max-width: 300px;
+    height: auto;
+}
+
+footer {
+    background-color: rgb(51, 24, 24);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-family: 'Mr Darcy W01 Regular';
+    font-size: 25px;
+    text-shadow: rgb(240, 32, 118) 1px 1px 3px;
+    border-top: 2px solid rgb(240, 32, 118);
+    box-shadow: 0 -5px 15px rgba(240, 32, 118, 0.4);
+    margin-top: 50px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+footer a:hover {
+    color: rgb(240, 32, 118);
+    text-shadow: 0 0 5px rgb(240, 32, 118);
+}
+
+.logout {
+    background-color: rgb(240, 32, 118);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Mr Darcy W01 Regular';
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(240, 32, 118, 0.6);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logout:hover {
+    color: rgb(236, 230, 230);
+    background-color: rgb(200, 20, 90);
+    transform: scale(1.05);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.avaliacoes-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgb(240, 32, 118);
+    box-shadow: 0 0 20px rgba(240, 32, 118, 0.6);
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 900px;
+    width: 100%;
+    font-family: 'Mr Darcy W01 Regular', Arial, sans-serif;
+    color: white;
+    text-align: center;
+    height: 1400px;
+}
+
+.avaliacao {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(240, 32, 118, 0.4);
+}
+
+.avaliacao:last-child {
+    border-bottom: none;
+}
+
+.avaliacao h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: rgb(240, 32, 118);
+}
+
+.avaliacao p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.avaliacao-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.perfil-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgb(240, 32, 118);
+}
+
+.avaliacao-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    justify-content: flex-start;
+}
+
+.avaliacao-actions button {
+    background-color: transparent;
+    border: none;
+    color: rgb(240, 32, 118);
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.avaliacao-actions button span {
+    font-size: 14px;
+    color: white;
+}
+
+.avaliacao-actions button:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+.comentario-container {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.comentario-container h3 {
+    color: rgb(240, 32, 118);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.comentario-container textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid rgb(240, 32, 118);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    resize: none;
+    font-family: Arial, sans-serif;
+}
+
+.comentario-container textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.enviar-comentario {
+    margin-top: 10px;
+    background-color: transparent;
+    border: 2px solid rgb(240, 32, 118);
+    color: rgb(240, 32, 118);
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.enviar-comentario:hover {
+    background-color: rgb(240, 32, 118);
+    color: white;
+}
+

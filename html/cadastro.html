@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../css/cadastro.css">
+    <link href="https://db.onlinewebfonts.com/c/6ab889bdda7be21423a47e6deea43f6a?family=Mr+Darcy+W01+Regular" rel="stylesheet">
+</head>
+<body>
+    
+ <header>
+    <div class="header-container">
+
+        <div class="hotel">
+            <img src="../images/hazbin.png" alt="hotel">
+        </div>
+
+        <div class="menu2">
+            <h2>Seja muito bem-vindo, caro pecador, ao Hazbin Hotel!</h2>
+            <h2><a href="login.html">Login</a></h2>
+            <h2><a href="cadastro.html">Cadastrar</a></h2>
+        </div>
+    </div>
+</header>
+
+<main class="cadastro-container">
+    <h1>Crie sua Conta</h1>
+    <form class="cadastro-form">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" required>
+        <i class="fa-solid fa-eye toggle-olho" onclick="toggleSenha(this)"></i>
+        
+        <label for="CPF">CPF</label>
+        <input type="cpf" id="cpf" name="cpf" required>
+
+        <label for="telefone">Telefone</label>
+        <input type="telefone" id="telefone" name="telefone" required>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+</main>
+
+<div class="logo">
+        <img src="../images/hazbin2.png" alt="hazbin">
+    </div>
+
+ <footer>
+    <p>&copy; Project designed by Charlie Morningstar, the Princess of Hell, and directed by Alastor, the Radio Demon.</p>
+    <p>
+        <a href="#">Termos de Uso</a> |
+        <a href="#">Política de Privacidade</a> |
+        <a href="#">Contato</a>
+    </p>
+</footer>
+
+<script type="module" src="../js/cadastro.js"></script>
+</body>
+</html>

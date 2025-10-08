@@ -1,0 +1,314 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(../images/wallpaper.png);
+    background-size: cover;
+}
+
+header {
+    background-color: rgb(51, 24, 24);
+    color: white;
+     text-shadow: rgb(240, 32, 118) 2px 2px 4px,
+                 rgb(240, 32, 118) -2px -2px 4px,
+                 rgb(240, 32, 118) 2px -2px 4px,
+                 rgb(240, 32, 118) -2px 2px 4px;
+    padding: 10px 0;
+    border-bottom: 2px solid rgb(240, 32, 118);
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+header a:hover {
+    color: black;
+     text-shadow: rgb(240, 32, 118) 2px 2px 4px,
+                 rgb(240, 32, 118) -2px -2px 4px,
+                 rgb(240, 32, 118) 2px -2px 4px,
+                 rgb(240, 32, 118) -2px 2px 4px;
+}
+
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-left: 90px;
+}
+
+.menu1{
+    display: flex;
+    gap: 25px;
+    font-family: 'Mr Darcy W01 Regular';
+    font-size: 20px;
+    white-space: nowrap;
+    margin-right: 30px;
+}
+
+.menu2{
+    display: flex;
+    gap: 25px;
+    font-family: 'Mr Darcy W01 Regular';
+    font-size: 20px;
+    justify-content: right;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.hotel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-left: -20px;
+}
+
+.hotel img {
+    max-width: 300px;
+    height: auto;
+}
+
+.quartos-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: rgb(240, 32, 118) -2px 2px 4px;
+    margin-left: 100px;
+    border: 2px solid rgb(240, 32, 118);
+}
+
+.quartos-container h1 {
+    text-align: center;
+    font-family: 'Mr Darcy W01 Regular';
+    color: white;
+    text-shadow: rgb(240, 32, 118) 2px 2px 4px,
+                 rgb(240, 32, 118) -2px -2px 4px,
+                 rgb(240, 32, 118) 2px -2px 4px,
+                 rgb(240, 32, 118) -2px 2px 4px;;
+    margin-bottom: 30px;
+}
+
+.quarto {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(51, 24, 24);
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.quarto img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+}
+
+.quarto:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.info {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info h2 {
+    font-family: 'Mr Darcy W01 Regular';
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.info p {
+    font-family: 'Mr Darcy W01 Regular';
+    font-size: 20px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: rgb(240, 32, 118);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-family: 'Mr Darcy W01 Regular';
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+   background-color: #ff4081;
+   box-shadow: 0 0 10px #ff4081, 0 0 20px #ff4081;
+}
+
+.quarto.indisponivel {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.quarto.indisponivel button {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.alastor2 {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    gap: 40px;
+    padding: 40px;
+    margin-top: -1340px;
+    margin-right: 50px;
+}
+
+.alastor2 img {
+    max-width: 450px;
+    height: 1250px;
+    flex-shrink: 0;
+}
+
+footer {
+    background-color: rgb(51, 24, 24);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-family: 'Mr Darcy W01 Regular';
+    font-size: 25px;
+    text-shadow: rgb(240, 32, 118) 1px 1px 3px;
+    border-top: 2px solid rgb(240, 32, 118);
+    box-shadow: 0 -5px 15px rgba(240, 32, 118, 0.4);
+    margin-top: 50px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+footer a:hover {
+    color: rgb(240, 32, 118);
+    text-shadow: 0 0 5px rgb(240, 32, 118);
+}
+
+.logout {
+    background-color: rgb(240, 32, 118);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Mr Darcy W01 Regular';
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(240, 32, 118, 0.6);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logout:hover {
+    color: rgb(236, 230, 230);
+    background-color: rgb(200, 20, 90);
+    transform: scale(1.05);
+}
+
+.modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal {
+    background-color: rgb(51, 24, 24);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 15px rgb(240, 32, 118);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.modal-info h2 {
+    font-family: 'Mr Darcy W01 Regular';
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.modal-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.stars {
+    font-size: 24px;
+    color: gold;
+    margin-bottom: 20px;
+}
+
+#modal-reserve {
+    background-color: rgb(240, 32, 118);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-family: 'Mr Darcy W01 Regular';
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: rgb(240, 32, 118);
+    text-shadow: 10 10 10px rgb(240, 32, 118);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliações</title>
+    <link rel="stylesheet" href="../css/avaliacoes.css">
+    <link href="https://db.onlinewebfonts.com/c/6ab889bdda7be21423a47e6deea43f6a?family=Mr+Darcy+W01+Regular"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="menu1">
+                <h2><a href="pagina_inicial.html">Início</a></h2>
+                <h2><a href="reservas.html">Reservas</a></h2>
+                <h2><a href="avaliacoes.html">Avaliações</a></h2>
+                <h2><a href="localizacao.html">Localização</a></h2>
+            </div>
+
+            <div class="hotel">
+                <img src="../images/hazbin.png" alt="hotel">
+            </div>
+
+            <div class="menu2">
+                <h2><a href="contato.html">Contato</a></h2>
+                <h2><a href="sobre_nos.html">Sobre Nós</a></h2>
+                <h2><a href="programacao.html">Programação</a></h2>
+                <h2><a href="duvidas.html">Dúvidas</a></h2>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="avaliacoes-container" id="avaliacoes-container">
+            <div class="avaliacao">
+                <div class="avaliacao-header">
+                    <img src="../images/lucifer2.png" alt="Lucifer" class="perfil-img">
+                    <h3>@Lucifer_Morningstar</h3>
+                </div>
+                <p>"Excelente estadia! O hotel da minha filha é o melhor de toda a Cidade Pentagrama."</p>
+                <div class="avaliacao-actions">
+                    <button class="like">👍 <span class="like-count">666</span></button>
+                    <button class="dislike">👎 <span class="dislike-count">2</span></button>
+                    <button class="responder">Responder</button>
+                </div>
+            </div>
+
+            <div class="avaliacao">
+                <div class="avaliacao-header">
+                    <img src="../images/vox.png" alt="Vox" class="perfil-img">
+                    <h3>@Vox_Television</h3>
+                </div>
+                <p>"Qualidade péssima, além disso tem sons de rádio o tempo todo tocando. Pior experiência que já tive
+                    com um estabelecimento."</p>
+                <div class="avaliacao-actions">
+                    <button class="like">👍 <span class="like-count">1</span></button>
+                    <button class="dislike">👎 <span class="dislike-count">2</span></button>
+                    <button class="responder">Responder</button>
+                </div>
+            </div>
+
+            <div class="avaliacao">
+                <div class="avaliacao-header">
+                    <img src="../images/alastor.png" alt="Radio" class="perfil-img">
+                    <h3>@Radio_Demon</h3>
+                </div>
+                <p>"Agradeço pelas críticas irrelevantes e mal justificadas, Vox. Dito isso, serviço de ótima qualidade.
+                    Recomendo."</p>
+                <div class="avaliacao-actions">
+                    <button class="like">👍 <span class="like-count">315</span></button>
+                    <button class="dislike">👎 <span class="dislike-count">2</span></button>
+                    <button class="responder">Responder</button>
+                </div>
+            </div>
+
+            <div class="avaliacao">
+                <div class="avaliacao-header">
+                    <img src="../images/velvette.png" alt="Velvette" class="perfil-img">
+                    <h3>@Velvette_Fashionist</h3>
+                </div>
+                <p>"Esse design de hotel é simplesmente di-vi-no! Super recomendo!"</p>
+                <div class="avaliacao-actions">
+                    <button class="like">👍 <span class="like-count">1017</span></button>
+                    <button class="dislike">👎 <span class="dislike-count">2</span></button>
+                    <button class="responder">Responder</button>
+                </div>
+            </div>
+
+            <div class="avaliacao">
+                <div class="avaliacao-header">
+                    <img src="../images/rosie.png" alt="Rosie" class="perfil-img">
+                    <h3>@Rosie_the_Cannibal</h3>
+                </div>
+                <p>"A proprietária é um amor de pessoa! A limpeza estava impecável, e a organização é de outro nível.
+                    Hotel maravilhoso!"</p>
+                <div class="avaliacao-actions">
+                    <button class="like">👍 <span class="like-count">90</span></button>
+                    <button class="dislike">👎 <span class="dislike-count">2</span></button>
+                    <button class="responder">Responder</button>
+                </div>
+            </div>
+
+            <div class="avaliacao">
+                <div class="avaliacao-header">
+                    <img src="../images/valentino.png" alt="Valentino" class="perfil-img">
+                    <h3>@Valentino_Productions</h3>
+                </div>
+                <p>Seu comentário foi privado.</p>
+                <div class="avaliacao-actions">
+                    <button class="like">👍 <span class="like-count">1</span></button>
+                    <button class="dislike">👎 <span class="dislike-count">1023</span></button>
+                    <button class="responder">Responder</button>
+                </div>
+            </div>
+
+            <div class="comentario-container">
+                <h3>Adicione um comentário</h3>
+                <textarea id="novo-comentario" placeholder="Escreva seu comentário aqui..." rows="4"></textarea>
+                <br>
+                <button id="enviar-comentario" class="enviar-comentario">Enviar</button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; Project designed by Charlie Morningstar, the Princess of Hell, and directed by Alastor, the Radio
+            Demon.</p>
+        <p>
+            <a href="#">Termos de Uso</a> |
+            <a href="#">Política de Privacidade</a> |
+            <a href="#">Contato</a>
+        </p>
+        <div class="logout-container">
+            <a href="login.html" class="logout">Logout</a>
+        </div>
+    </footer>
+
+    <script src="../js/avaliacoes.js"></script>
+    <script src="../js/mains.js/main.js"></script>
+    <script type="module" src="../js/mains.js/vericacao.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pagamento da Reserva</title>
+    <link rel="stylesheet" href="../css/pagamento.css">
+    <link href="https://db.onlinewebfonts.com/c/6ab889bdda7be21423a47e6deea43f6a?family=Mr+Darcy+W01+Regular"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="menu1">
+                <h2><a href="pagina_inicial.html">Início</a></h2>
+                <h2><a href="reservas.html">Reservas</a></h2>
+                <h2><a href="avaliacoes.html">Avaliações</a></h2>
+                <h2><a href="localizacao.html">Localização</a></h2>
+            </div>
+
+            <div class="hotel">
+                <img src="../images/hazbin.png" alt="hotel">
+            </div>
+
+            <div class="menu2">
+                <h2><a href="contato.html">Contato</a></h2>
+                <h2><a href="sobre_nos.html">Sobre Nós</a></h2>
+                <h2><a href="programacao.html">Programação</a></h2>
+                <h2><a href="duvidas.html">Dúvidas</a></h2>
+            </div>
+        </div>
+    </header>
+
+    <div class="pagamento-container">
+        <h1>Pagamento</h1>
+        <div id="resumo"></div>
+
+        <form>
+            <h3>Dados do Hóspede</h3>
+            <input type="text" placeholder="Nome completo" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Telefone" required>
+            <input type="number" placeholder="CPF" required>
+
+            <h3>Dados do Cartão</h3>
+            <input type="text" placeholder="Número do Cartão" required>
+            <input type="text" placeholder="Nome impresso no Cartão" required>
+            <input type="text" placeholder="Data de Validade (MM/AA)" required>
+            <input type="text" placeholder="CVV" required>
+
+            <input type="submit" value="Confirmar Pagamento">
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; Project designed by Charlie Morningstar, the Princess of Hell, and directed by Alastor, the Radio
+            Demon.</p>
+        <p>
+            <a href="#">Termos de Uso</a> |
+            <a href="#">Política de Privacidade</a> |
+            <a href="#">Contato</a>
+        </p>
+        <div class="logout-container">
+            <a href="login.html" class="logout">Logout</a>
+        </div>
+    </footer>
+
+    <script src="../js/pagamento.js"></script>
+    <script src="../js/mains.js/main.js"></script>
+    <script type="module" src="../js/mains.js/vericacao.js"></script>
+</body>
+
+</html>
