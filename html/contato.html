@@ -8,32 +8,55 @@
     <link rel="stylesheet" href="../css/contato.css">
     <link href="https://db.onlinewebfonts.com/c/6ab889bdda7be21423a47e6deea43f6a?family=Mr+Darcy+W01+Regular"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/colors.css/cor1.css">
+    <link rel="stylesheet" href="../css/base.css/style.css">
 </head>
 
 <body>
-    <header>
+    <header class="header card-transparente">
         <div class="header-container">
-            <div class="menu1">
-                <h2><a href="pagina_inicial.html">Início</a></h2>
-                <h2><a href="reservas.html">Reservas</a></h2>
-                <h2><a href="avaliacoes.html">Avaliações</a></h2>
-                <h2><a href="localizacao.html">Localização</a></h2>
+            <div class="header-links-esquerdo">
+                <a href="pagina_inicial.html">Início</a>
+                <a href="reservas.html">Reservas</a>
+                <a href="avaliacoes.html">Avaliações</a>
+                <a href="localizacao.html">Localização</a>
             </div>
 
-            <div class="hotel">
+            <div class="logo">
                 <img src="../images/hazbin.png" alt="hotel">
             </div>
 
-            <div class="menu2">
-                <h2><a href="contato.html">Contato</a></h2>
-                <h2><a href="sobre_nos.html">Sobre Nós</a></h2>
-                <h2><a href="programacao.html">Programação</a></h2>
-                <h2><a href="duvidas.html">Dúvidas</a></h2>
+            <div class="header-links-direito">
+                <a href="contato.html">Contato</a>
+                <a href="sobre_nos.html">Sobre Nós</a>
+                <a href="programacao.html">Programação</a>
+                <a href="duvidas.html">Dúvidas</a>
             </div>
+            <button class="profile-menu-button" id="profile-menu-button">
+                <i class="fas fa-user-circle"></i>
+            </button>
+            <div id="profile-menu" class="profile-menu card-transparente hidden">
+                <a href="perfil.html">Perfil</a>
+                <a href="configuracoes.html">Configurações</a>
+                <a href="logout.html" class="logout">Sair</a>
+            </div>
+
+            <button class="mobile-menu-button" id="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="mobile-menu card-transparente hidden">
+            <a href="localizacao.html">Localização</a>
+            <a href="duvidas.html">Dúvidas</a>
+            <a href="contato.html">Contato</a>
+            <a href="sobre_nos.html">Sobre Nós</a>
+            <a href="login.html" class="logout">Logout</a>
         </div>
     </header>
-
     <main>
+        <div class="espaçamento-1"></div>
+        
         <div class="contato-container">
             <h1>Fale Conosco</h1>
             <form action="#" method="post">
@@ -49,7 +72,7 @@
                 <label for="mensagem">Mensagem:</label>
                 <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
                 <br>
-                <button type="submit">Enviar Mensagem</button>
+                <button class="button-v2" type="submit">Enviar Mensagem</button>
             </form>
         </div>
 
@@ -57,21 +80,29 @@
             <img src="../images/alastor_1.png" alt="Alastor">
         </div>
 
-        <div class="logo">
+        <div class="logo2">
             <img src="../images/hazbin2.png" alt="Logo do Hazbin Hotel">
         </div>
+        <div class="espaçamento-2"></div>
     </main>
 
-    <footer>
-        <p>&copy; Project designed by Charlie Morningstar, the Princess of Hell, and directed by Alastor, the Radio
-            Demon.</p>
-        <p>
-            <a href="#">Termos de Uso</a> |
-            <a href="#">Política de Privacidade</a> |
-            <a href="#">Contato</a>
-        </p>
-        <div class="logout-container">
-            <a href="login.html" class="logout">Logout</a>
+    <footer class="footer card-transparente">
+        <div class="footer-container">
+            <p>© Project designed by Charlie Morningstar, the Princess of Hell, and directed by Alastor, the Radio
+                Demon.</p>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            <div class="footer-opções-mobile">
+                <a href="pagina_inicial.html"><i class="fas fa-home"></i><span>Início</span></a>
+                <a href="reservas.html"><i class="fas fa-calendar-alt"></i><span>Reservas</span></a>
+                <a href="avaliacoes.html"><i class="fas fa-star"></i><span>Avaliações</span></a>
+                <a href="programacao.html"><i class="fas fa-tv"></i><span>Programação</span></a>
+                <a href="usuario.html"><i class="fas fa-user-circle"></i><span>Você</span></a>
+            </div>
         </div>
     </footer>
 

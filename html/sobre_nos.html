@@ -1,172 +1,222 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nós</title>
     <link rel="stylesheet" href="../css/sobre_nos.css">
-    <link href="https://db.onlinewebfonts.com/c/6ab889bdda7be21423a47e6deea43f6a?family=Mr+Darcy+W01+Regular" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/6ab889bdda7be21423a47e6deea43f6a?family=Mr+Darcy+W01+Regular"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/colors.css/cor1.css">
+    <link rel="stylesheet" href="../css/base.css/style.css">
 </head>
-<body>
 
-    <header>
+<body>
+    <header class="header card-transparente">
         <div class="header-container">
-            <div class="menu1">
-                <h2><a href="pagina_inicial.html">Início</a></h2>
-                <h2><a href="reservas.html">Reservas</a></h2>
-                <h2><a href="avaliacoes.html">Avaliações</a></h2>
-                <h2><a href="localizacao.html">Localização</a></h2>
+            <div class="header-links-esquerdo">
+                <a href="pagina_inicial.html">Início</a>
+                <a href="reservas.html">Reservas</a>
+                <a href="avaliacoes.html">Avaliações</a>
+                <a href="localizacao.html">Localização</a>
             </div>
-            <div class="hotel">
+
+            <div class="logo">
                 <img src="../images/hazbin.png" alt="hotel">
             </div>
-            <div class="menu2">
-                <h2><a href="contato.html">Contato</a></h2>
-                <h2><a href="sobre_nos.html">Sobre Nós</a></h2>
-                <h2><a href="programacao.html">Programação</a></h2>
-                <h2><a href="duvidas.html">Dúvidas</a></h2>
+
+            <div class="header-links-direito">
+                <a href="contato.html">Contato</a>
+                <a href="sobre_nos.html">Sobre Nós</a>
+                <a href="programacao.html">Programação</a>
+                <a href="duvidas.html">Dúvidas</a>
             </div>
+            <button class="profile-menu-button" id="profile-menu-button">
+                <i class="fas fa-user-circle"></i>
+            </button>
+            <div id="profile-menu" class="profile-menu card-transparente hidden">
+                <a href="perfil.html">Perfil</a>
+                <a href="configuracoes.html">Configurações</a>
+                <a href="logout.html" class="logout">Sair</a>
+            </div>
+
+            <button class="mobile-menu-button" id="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="mobile-menu card-transparente hidden">
+            <a href="localizacao.html">Localização</a>
+            <a href="duvidas.html">Dúvidas</a>
+            <a href="contato.html">Contato</a>
+            <a href="sobre_nos.html">Sobre Nós</a>
+            <a href="login.html" class="logout">Logout</a>
         </div>
     </header>
+    <main>
+        <div class="espaçamento-1"></div>
 
-    <main class="sobre-container">
-        <div class="sobre_nos">
-          <h1 style="color: white;">Sobre Nós</h1>
-          <br>
-              <br>
-              <br>
-              <br>
-          <h1 class="proposito">Qual o propósito do nosso projeto?</h1>
-          <br>
-          <h2 class="proposito-texto">Nosso objetivo é oferecer um espaço seguro e acolhedor para todos os hóspedes,
-             independentemente de sua origem ou passado, além de garantir uma estadia divertida e, no mínimo, inesquecível.
-            </h2>
-              <br>
-              <br>
-              <h1 class="local">Por que escolhemos esta localização?</h1>
-              <br>
-              <h2>Por quê escolhemos a Cidade Pentagrama como localização, você deve estar se perguntando. Aqui é quente o ano todo e livre de imprevistos como mudanças climáticas ou desastres naturais,
-                contanto que você não se preocupe com o caos e a destruição que ocorrem ocasionalmente nas ruas. Além disso, é um lugar onde todos são bem-vindos,
-                independentemente de sua origem ou passado.
-                Aqui, você pode relaxar e aproveitar a companhia de pessoas de todos os tipos, sem julgamentos ou discriminação. Além disso, o hotel fica
-                localizado em uma área estratégica, perto de várias atrações turísticas e pontos de interesse, tornando-o o local ideal para quem deseja explorar a cidade.
-              </h2>
-              <br>
-              <br>
-              <h1 class="porque">Por que você deveria escolher o Hazbin Hotel?</h1>
-              <br>
-              <h2>O Hazbin Hotel é o lugar perfeito para quem busca uma experiência única e inesquecível. Oferecemos uma ampla gama de serviços e comodidades,
-                incluindo quartos confortáveis, restaurantes deliciosos, entretenimento ao vivo e muito mais. Além disso,
-                nossa equipe é altamente treinada e dedicada a garantir que sua estadia seja a melhor possível.
-                Se você está procurando um lugar para relaxar, se divertir ou simplesmente passar um tempo com amigos, o Hazbin Hotel é o lugar certo para você.
-                Além disso, o Hazbin Hotel é o lugar mais seguro de todo o Brasil, com segurança 24 horas por dia, 7 dias por semana.
-              </h2>
-              <br>
-              <br>
-              <h1 class="hotel-evolucao">Evolução do Nosso Hotel</h1>
-              <br>
-              <div class="evolucao-grid">
-    <div class="evolucao-item">
-        <img src="../images/hotel1.png" alt="Evolução do Hotel 1">
-        <p>Inauguração do Hotel - Dia 13/04/24</p>
-    </div>
-    <div class="evolucao-item">
-        <img src="../images/hotel2.png" alt="Evolução do Hotel 2" class="hotel2">
-        <p>Primeira Reforma - Dia 20/7/24</p>
-    </div>
-    <div class="evolucao-item">
-        <img src="../images/hotel3.png" alt="Evolução do Hotel 3" class="hotel3">
-        <p>Hotel Atualmente - Dia 03/11/25</p>
-    </div>
-</div>
-        </div>
+        <div class="sobre-container">
+            <div class="sobre_nos">
+                <h1 style="color: white;">Sobre Nós</h1>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h1 class="proposito">Qual o propósito do nosso projeto?</h1>
+                <br>
+                <h2 class="proposito-texto">Nosso objetivo é oferecer um espaço seguro e acolhedor para todos os
+                    hóspedes,
+                    independentemente de sua origem ou passado, além de garantir uma estadia divertida e, no mínimo,
+                    inesquecível.
+                </h2>
+                <br>
+                <br>
+                <h1 class="local">Por que escolhemos esta localização?</h1>
+                <br>
+                <h2>Por quê escolhemos a Cidade Pentagrama como localização, você deve estar se perguntando. Aqui é
+                    quente o ano todo e livre de imprevistos como mudanças climáticas ou desastres naturais,
+                    contanto que você não se preocupe com o caos e a destruição que ocorrem ocasionalmente nas ruas.
+                    Além disso, é um lugar onde todos são bem-vindos,
+                    independentemente de sua origem ou passado.
+                    Aqui, você pode relaxar e aproveitar a companhia de pessoas de todos os tipos, sem julgamentos ou
+                    discriminação. Além disso, o hotel fica
+                    localizado em uma área estratégica, perto de várias atrações turísticas e pontos de interesse,
+                    tornando-o o local ideal para quem deseja explorar a cidade.
+                </h2>
+                <br>
+                <br>
+                <h1 class="porque">Por que você deveria escolher o Hazbin Hotel?</h1>
+                <br>
+                <h2>O Hazbin Hotel é o lugar perfeito para quem busca uma experiência única e inesquecível. Oferecemos
+                    uma ampla gama de serviços e comodidades,
+                    incluindo quartos confortáveis, restaurantes deliciosos, entretenimento ao vivo e muito mais. Além
+                    disso,
+                    nossa equipe é altamente treinada e dedicada a garantir que sua estadia seja a melhor possível.
+                    Se você está procurando um lugar para relaxar, se divertir ou simplesmente passar um tempo com
+                    amigos, o Hazbin Hotel é o lugar certo para você.
+                    Além disso, o Hazbin Hotel é o lugar mais seguro de todo o Brasil, com segurança 24 horas por dia, 7
+                    dias por semana.
+                </h2>
+                <br>
+                <br>
+                <h1 class="hotel-evolucao">Evolução do Nosso Hotel</h1>
+                <br>
+                <div class="evolucao-grid">
+                    <div class="evolucao-item">
+                        <img src="../images/hotel1.png" alt="Evolução do Hotel 1">
+                        <p>Inauguração do Hotel - Dia 13/04/24</p>
+                    </div>
+                    <div class="evolucao-item">
+                        <img src="../images/hotel2.png" alt="Evolução do Hotel 2" class="hotel2">
+                        <p>Primeira Reforma - Dia 20/7/24</p>
+                    </div>
+                    <div class="evolucao-item">
+                        <img src="../images/hotel3.png" alt="Evolução do Hotel 3" class="hotel3">
+                        <p>Hotel Atualmente - Dia 03/11/25</p>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
         <div class="container-staff">
             <h1 class="equipe">Nossa Equipe de Funcionários</h1>
             <br>
-    <div class="staff-grid">
-        <!-- Funcionários -->
-        <div class="staff-card">
-            <img src="../images/charlie.png" alt="Funcionário 1">
-            <p>Charlie Morningstar - Gerente Geral</p>
-        </div>
-        <div class="staff-card">
-            <img src="../images/vaggie.png" alt="Funcionário 2">
-            <p>Vaggie - Coordenadora</p>
-        </div>
-        <div class="staff-card">
-            <img src="../images/angel.png" alt="Funcionário 3">
-            <p>Angel Dust - Especialista em Relações Públicas</p>
-        </div>
-        <div class="staff-card">
-            <img src="../images/pentious.png" alt="Funcionário 4">
-            <p>Sir Pentious - Técnico e Engenheiro</p>
-        </div>
-        <div class="staff-card">
-            <img src="../images/alastor4.png" alt="Funcionário 5">
-            <p>Alastor - Apresentador</p>
-        </div>
-        <div class="staff-card">
-            <img src="../images/niffty.png" alt="Funcionário 6">
-            <p>Niffty - Faxineira</p>
-        </div>
-        <div class="staff-card">
-            <img src="../images/cherri.png" alt="Funcionário 7">
-            <p>Cherri Bomb - Segurança</p>
-        </div>
-        <div class="staff-card">
-            <img src="../images/husk.png" alt="Funcionário 8">
-            <p>Husker - Barista</p>
-        </div>
-    </div>
+            <div class="staff-grid">
+                <!-- Funcionários -->
+                <div class="staff-card">
+                    <img src="../images/charlie.png" alt="Funcionário 1">
+                    <p>Charlie Morningstar - Gerente Geral</p>
+                </div>
+                <div class="staff-card">
+                    <img src="../images/vaggie.png" alt="Funcionário 2">
+                    <p>Vaggie - Coordenadora</p>
+                </div>
+                <div class="staff-card">
+                    <img src="../images/angel.png" alt="Funcionário 3">
+                    <p>Angel Dust - Especialista em Relações Públicas</p>
+                </div>
+                <div class="staff-card">
+                    <img src="../images/pentious.png" alt="Funcionário 4">
+                    <p>Sir Pentious - Técnico e Engenheiro</p>
+                </div>
+                <div class="staff-card">
+                    <img src="../images/alastor4.png" alt="Funcionário 5">
+                    <p>Alastor - Apresentador</p>
+                </div>
+                <div class="staff-card">
+                    <img src="../images/niffty.png" alt="Funcionário 6">
+                    <p>Niffty - Faxineira</p>
+                </div>
+                <div class="staff-card">
+                    <img src="../images/cherri.png" alt="Funcionário 7">
+                    <p>Cherri Bomb - Segurança</p>
+                </div>
+                <div class="staff-card">
+                    <img src="../images/husk.png" alt="Funcionário 8">
+                    <p>Husker - Barista</p>
+                </div>
+            </div>
 
-    <div class="lucifer-card">
-        <img src="../images/lucifer1.png" alt="Lucifer">
-        <p>Lúcifer Morningstar - Patrocinador Principal</p>
-    </div>
-</div>
+            <div class="lucifer-card">
+                <img src="../images/lucifer1.png" alt="Lucifer">
+                <p>Lúcifer Morningstar - Patrocinador Principal</p>
+            </div>
+        </div>
 
-<div class="container-devs">
-    <h1 class="devs-titulo">Equipe de Desenvolvedores/Proprietários</h1>
-    <br>
-    <div class="devs-grid">
-        <div class="dev-card">
-            <img src="../images/jesse.jpg" alt="Jessé">
-            <p>Jessé - Front-end</p>
+        <div class="container-devs">
+            <h1 class="devs-titulo">Equipe de Desenvolvedores/Proprietários</h1>
+            <br>
+            <div class="devs-grid">
+                <div class="dev-card">
+                    <img src="../images/jesse.jpg" alt="Jessé">
+                    <p>Jessé - Front-end</p>
+                </div>
+                <div class="dev-card">
+                    <img src="../images/vitin.jpg" alt="Vitinho">
+                    <p>Vitinho - Front-end</p>
+                </div>
+                <div class="dev-card">
+                    <img src="../images/arthur.jpg" alt="Arthur">
+                    <p>Arthur - Front-end</p>
+                </div>
+                <div class="dev-card">
+                    <img src="../images/maradona.jpg" alt="Diego">
+                    <p>Diego - Back-end</p>
+                </div>
+            </div>
         </div>
-        <div class="dev-card">
-            <img src="../images/vitin.jpg" alt="Vitinho">
-            <p>Vitinho - Front-end</p>
-        </div>
-        <div class="dev-card">
-            <img src="../images/arthur.jpg" alt="Arthur">
-            <p>Arthur - Front-end</p>
-        </div>
-        <div class="dev-card">
-            <img src="../images/maradona.jpg" alt="Diego">
-            <p>Diego - Back-end</p>
-        </div>
-    </div>
-</div>
 
 
+        </div>
+
+        <div class="espaçamento-2"></div>
     </main>
 
-    <footer>
-        <p>&copy; Project designed by Charlie Morningstar, the Princess of Hell, and directed by Alastor, the Radio Demon.</p>
-        <p>
-            <a href="#">Termos de Uso</a> |
-            <a href="#">Política de Privacidade</a> |
-            <a href="#">Contato</a>
-        </p>
-         <div class="logout-container">
-    <a href="login.html" class="logout">Logout</a>
-</div>
+    <footer class="footer card-transparente">
+        <div class="footer-container">
+            <p>© Project designed by Charlie Morningstar, the Princess of Hell, and directed by Alastor, the Radio
+                Demon.</p>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            <div class="footer-opções-mobile">
+                <a href="pagina_inicial.html"><i class="fas fa-home"></i><span>Início</span></a>
+                <a href="reservas.html"><i class="fas fa-calendar-alt"></i><span>Reservas</span></a>
+                <a href="avaliacoes.html"><i class="fas fa-star"></i><span>Avaliações</span></a>
+                <a href="programacao.html"><i class="fas fa-tv"></i><span>Programação</span></a>
+                <a href="usuario.html"><i class="fas fa-user-circle"></i><span>Você</span></a>
+            </div>
+        </div>
     </footer>
-    
+
     <script src="../js/mains.js/main.js"></script>
     <script type="module" src="../js/mains.js/vericacao.js"></script>
 </body>
+
 </html>
