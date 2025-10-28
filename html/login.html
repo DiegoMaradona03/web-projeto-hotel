@@ -1,56 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="../css/login.css">
-    <link href="https://db.onlinewebfonts.com/c/6ab889bdda7be21423a47e6deea43f6a?family=Mr+Darcy+W01+Regular" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/6ab889bdda7be21423a47e6deea43f6a?family=Mr+Darcy+W01+Regular"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/colors.css/cor1.css">
+    <link rel="stylesheet" href="../css/base.css/style.css">
 </head>
+
 <body>
-    
- <header>
-    <div class="header-container">
 
-        <div class="hotel">
-            <img src="../images/hazbin.png" alt="hotel">
+    <header class="header card-transparente">
+        <div class="header-container">
+            <div class="logo">
+                <img src="../images/hazbin.png" alt="hotel">
+            </div>
+
+            <div class="header-links">
+                <h2>Seja muito bem-vindo, caro residente,<br> ao Hazbin Hotel!</h2>
+                <a href="login.html">Login</a>
+                <a href="cadastro.html">Cadastrar</a>
+            </div>
+
+            <button class="mobile-menu-button" id="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-
-        <div class="menu2">
-            <h2>Seja muito bem-vindo, caro residente, ao Hazbin Hotel!</h2>
-            <h2><a href="login.html">Login</a></h2>
-            <h2><a href="cadastro.html">Cadastrar</a></h2>
+        <div id="mobile-menu" class="mobile-menu card-transparente hidden">
+            <a href="login.html">Login</a>
+            <a href="cadastro.html">Cadastrar</a>
         </div>
-    </div>
-</header>
+    </header>
 
-<main class="login-container">
-    <h1>Acesse sua conta</h1>
-    <form class="login-form">
-        <label for="email">E-mail</label>
-        <input type="text" id="email" name="email" required>
+    <main>
+        <div class="espaçamento-1"></div>
+        <div class="login-container">
+            <h1>Acesse sua conta</h1>
+            <form class="login-form">
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="email" placeholder="Digite seu email" required>
 
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" required>
-        <i class="fa-solid fa-eye toggle-olho" onclick="toggleSenha(this)"></i>
+                <label for="senha">Senha</label>
+                <div class="campo-senha">
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                    <i class="fa-solid fa-eye toggle-olho" onclick="toggleSenha(this)"></i>
+                </div>
 
-        <button type="submit" class="btn-login">Login</button>
-    </form>
-</main>
+                <button type="submit" class="btn-login">Login</button>
+            </form>
 
-<div class="logo">
-        <img src="../images/hazbin2.png" alt="hazbin">
-    </div>
-
- <footer>
-    <p>&copy; Project designed by Charlie Morningstar, the Princess of Hell, and directed by Alastor, the Radio Demon.</p>
-    <p>
-        <a href="#">Termos de Uso</a> |
-        <a href="#">Política de Privacidade</a> |
-        <a href="#">Contato</a>
-    </p>
-</footer>
-
-<script type="module" src="../js/login.js"></script>
+    </main>
+    <script src="../js/mains.js/main.js"></script>
+    <script type="module" src="../js/login.js"></script>
 </body>
+
 </html>

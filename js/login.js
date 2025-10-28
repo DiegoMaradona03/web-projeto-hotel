@@ -11,13 +11,10 @@ form.addEventListener('submit', async (e) => {
     };
 
     try {
-        // Ajuste da rota para bater com o back
         const resp = await axios.post('https://api-projeto-hotel.vercel.app/login', dados);
 
         if (resp.data.token) {
             localStorage.setItem('usuario', JSON.stringify(resp.data));
-
-            alert('✅ Login realizado com sucesso!');
 
             window.location.href = 'pagina_inicial.html';
         }
@@ -26,3 +23,16 @@ form.addEventListener('submit', async (e) => {
         alert(error.response?.data?.error || 'Usuário ou senha inválidos');
     }
 });
+
+function toggleSenha(icon) {
+  const input = icon.previousElementSibling;
+  if (input.type === "password") {
+    input.type = "text";
+    icon.classList.remove("fa-eye");
+    icon.classList.add("fa-eye-slash");
+  } else {
+    input.type = "password";
+    icon.classList.remove("fa-eye-slash");
+    icon.classList.add("fa-eye");
+  }
+}

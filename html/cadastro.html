@@ -1,65 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="../css/cadastro.css">
-    <link href="https://db.onlinewebfonts.com/c/6ab889bdda7be21423a47e6deea43f6a?family=Mr+Darcy+W01+Regular" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/6ab889bdda7be21423a47e6deea43f6a?family=Mr+Darcy+W01+Regular"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/colors.css/cor1.css">
+    <link rel="stylesheet" href="../css/base.css/style.css">
 </head>
+
 <body>
-    
- <header>
-    <div class="header-container">
 
-        <div class="hotel">
-            <img src="../images/hazbin.png" alt="hotel">
+    <header class="header card-transparente">
+        <div class="header-container">
+            <div class="logo">
+                <img src="../images/hazbin.png" alt="hotel">
+            </div>
+
+            <div class="header-links">
+                <h2>Seja muito bem-vindo, caro residente,<br> ao Hazbin Hotel!</h2>
+                <a href="login.html">Login</a>
+                <a href="cadastro.html">Cadastrar</a>
+            </div>
+
+            <button class="mobile-menu-button" id="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="mobile-menu card-transparente hidden">
+            <a href="login.html">Login</a>
+            <a href="cadastro.html">Cadastrar</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="espaçamento-1"></div>
+        <div class="cadastro-container">
+            <h1>Crie sua Conta</h1>
+            <form class="cadastro-form">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+
+                <label for="senha">Senha</label>
+                <div class="campo-senha">
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                    <i class="fa-solid fa-eye toggle-olho" onclick="toggleSenha(this)"></i>
+                </div>
+
+                <label for="CPF">CPF</label>
+                <input type="cpf" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
+
+                <label for="telefone">Telefone</label>
+                <input type="telefone" id="telefone" name="telefone" placeholder="Digite seu número telefone" required>
+
+                <button type="submit">Cadastrar</button>
+            </form>
         </div>
 
-        <div class="menu2">
-            <h2>Seja muito bem-vindo, caro residente, ao Hazbin Hotel!</h2>
-            <h2><a href="login.html">Login</a></h2>
-            <h2><a href="cadastro.html">Cadastrar</a></h2>
-        </div>
-    </div>
-</header>
+        <div class="espaçamento-2"></div>
+    </main>
 
-<main class="cadastro-container">
-    <h1>Crie sua Conta</h1>
-    <form class="cadastro-form">
-        <label for="nome">Nome Completo</label>
-        <input type="text" id="nome" name="nome" required>
-
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" required>
-        <i class="fa-solid fa-eye toggle-olho" onclick="toggleSenha(this)"></i>
-        
-        <label for="CPF">CPF</label>
-        <input type="cpf" id="cpf" name="cpf" required>
-
-        <label for="telefone">Telefone</label>
-        <input type="telefone" id="telefone" name="telefone" required>
-
-        <button type="submit">Cadastrar</button>
-    </form>
-</main>
-
-<div class="logo">
-        <img src="../images/hazbin2.png" alt="hazbin">
-    </div>
-
- <footer>
-    <p>&copy; Project designed by Charlie Morningstar, the Princess of Hell, and directed by Alastor, the Radio Demon.</p>
-    <p>
-        <a href="#">Termos de Uso</a> |
-        <a href="#">Política de Privacidade</a> |
-        <a href="#">Contato</a>
-    </p>
-</footer>
-
-<script type="module" src="../js/cadastro.js"></script>
+    <script src="../js/mains.js/main.js"></script>
+    <script type="module" src="../js/cadastro.js"></script>
 </body>
+
 </html>
