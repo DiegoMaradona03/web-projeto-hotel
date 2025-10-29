@@ -1,192 +1,274 @@
+/* ===== Conteúdo Principal Responsivo (Main) ===== */
 .quartos-container {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    box-shadow: rgb(240, 32, 118) -2px 2px 4px;
-    margin-left: 100px;
-    border: 2px solid rgb(240, 32, 118);
+  background-color: var(--t1);
+  max-width: 75rem;
+  margin: 6rem auto;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 2rem var(--t3);
+  color: var(--p2);
+  font-family: 'Mr Darcy W01 Regular', serif;
+  text-align: center;
+  border: 0.125rem solid var(--p3);
+  box-sizing: border-box;
 }
 
+/* ===== Título ===== */
 .quartos-container h1 {
-    text-align: center;
-    font-family: 'Mr Darcy W01 Regular';
-    color: white;
-    text-shadow: rgb(240, 32, 118) 2px 2px 4px,
-                 rgb(240, 32, 118) -2px -2px 4px,
-                 rgb(240, 32, 118) 2px -2px 4px,
-                 rgb(240, 32, 118) -2px 2px 4px;;
-    margin-bottom: 30px;
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+  color: var(--p3);
+  text-shadow: 0.125rem 0.125rem 0.3125rem var(--t3);
 }
 
+/* ===== Cada Quarto ===== */
 .quarto {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: rgb(51, 24, 24);
-    margin-bottom: 30px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.quarto img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    object-fit: cover;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--p1);
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 0.125rem solid var(--p3);
+  box-shadow: 0 0 1rem var(--t3);
+  transition: transform 0.3s ease;
 }
 
 .quarto:hover {
-    transform: scale(1.03);
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  transform: scale(1.03);
+}
+
+.quarto img {
+  width: 100%;
+  max-width: 18.75rem; /* 300px */
+  height: auto;
+  object-fit: cover;
 }
 
 .info {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .info h2 {
-    font-family: 'Mr Darcy W01 Regular';
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: white;
+  font-size: 1.75rem;
+  color: var(--p3);
+  margin-bottom: 1rem;
 }
 
 .info p {
-    font-family: 'Mr Darcy W01 Regular';
-    font-size: 20px;
-    color: white;
-    margin-bottom: 20px;
+  font-size: 1.25rem;
+  color: var(--p2);
+  margin-bottom: 1.25rem;
 }
 
 .button-v2 {
-    background-color: rgb(240, 32, 118);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-family: 'Mr Darcy W01 Regular';
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--p3);
+  color: var(--p2);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  border-radius: 0.5rem;
+  font-family: 'Mr Darcy W01 Regular', serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .button-v2:hover {
-   background-color: #ff4081;
-   box-shadow: 0 0 10px #ff4081, 0 0 20px #ff4081;
+  background-color: var(--t3);
+  box-shadow: 0 0 1rem var(--p3), 0 0 2rem var(--p3);
 }
 
 .quarto.indisponivel {
-    opacity: 0.5;
-    pointer-events: none;
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .quarto.indisponivel button {
-    background-color: gray;
-    cursor: not-allowed;
+  background-color: gray;
+  cursor: not-allowed;
 }
 
-.alastor2 {
-    display: flex;
-    align-items: right;
-    justify-content: right;
-    gap: 40px;
-    padding: 40px;
-    margin-top: -1340px;
-    margin-right: 50px;
-}
-
-.alastor2 img {
-    max-width: 450px;
-    height: 1250px;
-    flex-shrink: 0;
-}
-
-.modal-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-}
-
-.hidden {
-    display: none;
-}
-
+/* ===== Modal ===== */
 .modal {
-    background-color: rgb(51, 24, 24);
-    color: white;
-    padding: 30px;
-    border-radius: 10px;
-    position: relative;
-    max-width: 600px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 0 15px rgb(240, 32, 118);
-    animation: fadeIn 0.3s ease-in-out;
+  background-color: var(--p1);
+  color: var(--p2);
+  padding: 2rem;
+  border-radius: 1rem;
+  position: relative;
+  max-width: 50rem;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 0 1.5rem var(--t3);
+  border: 0.125rem solid var(--p3);
+  animation: fadeIn 0.3s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
 }
 
 .modal img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 20px;
+  width: 45%;
+  border-radius: 1rem;
+}
+
+.modal-info {
+  flex: 1;
+  text-align: left;
 }
 
 .modal-info h2 {
-    font-family: 'Mr Darcy W01 Regular';
-    font-size: 28px;
-    margin-bottom: 10px;
+  color: var(--p3);
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
 }
 
 .modal-info p {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.stars {
-    font-size: 24px;
-    color: gold;
-    margin-bottom: 20px;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
 }
 
 #modal-reserve {
-    background-color: rgb(240, 32, 118);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-family: 'Mr Darcy W01 Regular';
-    cursor: pointer;
-    border-radius: 5px;
+  background-color: var(--p3);
+  color: var(--p2);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#modal-reserve:hover {
+  background-color: var(--t3);
+  box-shadow: 0 0 1rem var(--p3);
 }
 
 .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: var(--p2);
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .close:hover {
-    color: rgb(240, 32, 118);
-    text-shadow: 10 10 10px rgb(240, 32, 118);
+  color: var(--p3);
 }
 
+/* ===== Animação ===== */
 @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 767px) {
+  .quartos-container {
+    max-width: 100%;
+    margin: 4rem auto;
+    padding: 2rem;
+  }
+
+  .quartos-container h1 {
+    font-size: 1.75rem;
+  }
+
+  .quarto {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info {
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .info h2 {
+    font-size: 1.5rem;
+  }
+
+  .info p {
+    font-size: 1.125rem;
+  }
+
+  .button-v2 {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .modal {
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .modal img {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .modal-info {
+    text-align: center;
+  }
+
+  #modal-reserve {
+    width: 100%;
+  }
+}
+
+.alastor2 {
+  display: none;
+}
+
+@media (min-width: 1550px) and (min-width: 1779px) {
+.alastor2 {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  top: 30%;
+  left: 81%;
+}
+
+.alastor2 img {
+  max-width: 22rem;
+  height: auto;
+}
+
+.quartos-container {
+    margin-left: 2%;
+}
+}
+
+@media (min-width: 1780px) {
+.alastor2 {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  top: 30%;
+  left: 78%;
+}
+
+.alastor2 img {
+  max-width: 22rem;
+  height: auto;
+}
+
+.quartos-container {
+    margin-left: 7.5%;
+}
 }

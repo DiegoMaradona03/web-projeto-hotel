@@ -1,0 +1,74 @@
+/* ===== Container Principal ===== */
+.config-container {
+  background-color: var(--t1);
+  max-width: 45rem;
+  margin: 6rem auto;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 2rem var(--t3);
+  color: var(--p2);
+  font-family: 'Mr Darcy W01 Regular', serif;
+  text-align: center;
+  border: 0.125rem solid var(--p3);
+  box-sizing: border-box;
+}
+
+/* ===== Título ===== */
+.config-container h1 {
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+  color: var(--p3);
+  text-shadow: 0.125rem 0.125rem 0.3125rem var(--t3);
+}
+
+/* ===== Botões das Opções ===== */
+.config-opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.config-botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: var(--p3);
+  color: var(--p2);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.config-botao:hover {
+  box-shadow: 0 0 0.625rem var(--p3), 0 0 1.25rem var(--p3);
+  transform: scale(1.03);
+}
+
+/* ===== Ícones ===== */
+.config-botao i {
+  font-size: 1.5rem;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  .config-container {
+    margin: 4rem 1.5rem;
+    padding: 2rem;
+  }
+
+  .config-container h1 {
+    font-size: 1.75rem;
+  }
+
+  .config-botao {
+    font-size: 1.125rem;
+    padding: 0.75rem;
+  }
+
+  .config-botao i {
+    font-size: 1.25rem;
+  }
+}
