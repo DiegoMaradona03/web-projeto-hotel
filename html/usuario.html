@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Reservar Suíte Standard</title>
-    <link rel="stylesheet" href="../css/quartos.css">
-    <link href="https://db.onlinewebfonts.com/c/6ab889bdda7be21423a47e6deea43f6a?family=Mr+Darcy+W01+Regular"
-        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Hazbin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link id="temadapag" rel="stylesheet" href="../css/colors.css/cor1.css">
     <link rel="stylesheet" href="../css/base.css/style.css">
+    <link rel="stylesheet" href="../css/opcoes.css">
+    <link href="https://db.onlinewebfonts.com/c/6ab889bdda7be21423a47e6deea43f6a?family=Mr+Darcy+W01+Regular"
+        rel="stylesheet">
 </head>
 
 <body>
+
     <header class="header card-transparente">
         <div class="header-container">
             <div class="header-links-esquerdo">
                 <a href="pagina_inicial.html">Início</a>
-                <a href="reservas.html">Reservas</a>
+                <a href="quartos.html">Quartos</a>
                 <a href="avaliacoes.html">Avaliações</a>
                 <a href="localizacao.html">Localização</a>
             </div>
@@ -36,8 +38,9 @@
                 <i class="fas fa-user-circle"></i>
             </button>
             <div id="profile-menu" class="profile-menu card-transparente hidden">
-                <a href="perfil.html">Perfil</a>
+                <a href="usuario.html">Perfil</a>
                 <a href="configuracoes.html">Configurações</a>
+                <a href="reservas.html">Reservas</a>
                 <a href="logout.html" class="logout">Sair</a>
             </div>
 
@@ -50,53 +53,35 @@
             <a href="duvidas.html">Dúvidas</a>
             <a href="contato.html">Contato</a>
             <a href="sobre_nos.html">Sobre Nós</a>
-            <a href="login.html" class="logout">Logout</a>
         </div>
     </header>
     <main>
         <div class="espaçamento-1"></div>
+        <div class="background"></div>
 
-        <div class="quartos-container">
-            <h1>Reservar Suíte Standard</h1>
+        <section class="container">
+            <div class="opcoes">
+                <i class="fas fa-user-circle"></i>
 
-            <form action="pagamento.html" method="GET" class="info">
-                <label for="checkin">Data de Entrada:</label>
-                <input type="date" id="checkin" name="checkin" required>
+                (campo para aparecer o nome do usuario)
 
-                <label for="checkout">Data de Saída:</label>
-                <input type="date" id="checkout" name="checkout" required>
+                <a href="configuracoes.html" class="botao">
+                    <i class="fas fa-user-cog"></i> Configurações
+                </a>
 
-                <label for="parcelas">Número de Parcelas:</label>
-                <select id="parcelas" name="parcelas" required>
-                    <option value="1">1x de R$1.929,00(sem juros)</option>
-                    <option value="2">2x de R$964,50</option>
-                    <option value="3">3x de R$643,00</option>
-                    <option value="4">4x de R$482,25</option>
-                    <option value="5">5x de R$385,80</option>
-                    <option value="6">6x de R$321,50</option>
-                    <option value="7">7x de R$275,60</option>
-                    <option value="8">8x de R$241,10</option>
-                    <option value="9">9x de R$214,30</option>
-                    <option value="10">10x de R$192,90</option>
-                    <option value="11">11x de R$175,40</option>
-                    <option value="12">12x de R$160,70</option>
-                </select>
+                <a href="reservas.html" class="botao">
+                    <i class="fas fa-calendar-alt"></i> Suas reservas
+                </a>
 
-                <p><strong>Informações sobre o serviço de quarto:</strong></p>
-                <ul>
-                    <li>Disponível das 7h às 22h.</li>
-                    <li>Pedidos pelo telefone interno do quarto.</li>
-                    <li>Menu disponível no quarto e pelo QR code.</li>
-                </ul>
+                <a href="comentarios.html" class="botao">
+                    <i class="fas fa-comment-dots"></i> Seus comentários
+                </a>
 
-                <img src="../images/qr.png" alt="QR Code" class="code-image">
-
-                <input type="hidden" name="quarto" value="standard">
-                <input type="hidden" name="preco" value="200">
-
-                <button class="button-v2" type="submit">Ir para Pagamento</button>
-            </form>
-        </div>
+                <a href="login.html" class="logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </section>
 
         <div class="espaçamento-2"></div>
     </main>
@@ -113,6 +98,7 @@
 
             <div class="footer-opções-mobile">
                 <a href="pagina_inicial.html"><i class="fas fa-home"></i><span>Início</span></a>
+                <a href="quartos.html"><i class="fas fa-door-open"></i><span>Quartos</span></a>
                 <a href="reservas.html"><i class="fas fa-calendar-alt"></i><span>Reservas</span></a>
                 <a href="avaliacoes.html"><i class="fas fa-star"></i><span>Avaliações</span></a>
                 <a href="programacao.html"><i class="fas fa-tv"></i><span>Programação</span></a>

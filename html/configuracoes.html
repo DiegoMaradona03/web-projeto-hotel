@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link id="temadapag" rel="stylesheet" href="../css/colors.css/cor1.css">
     <link rel="stylesheet" href="../css/base.css/style.css">
-    <link rel="stylesheet" href="../css/config.css">
+    <link rel="stylesheet" href="../css/opcoes.css">
     <link href="https://db.onlinewebfonts.com/c/6ab889bdda7be21423a47e6deea43f6a?family=Mr+Darcy+W01+Regular"
         rel="stylesheet">
 </head>
@@ -19,7 +19,7 @@
         <div class="header-container">
             <div class="header-links-esquerdo">
                 <a href="pagina_inicial.html">Início</a>
-                <a href="reservas.html">Reservas</a>
+                <a href="quartos.html">Quartos</a>
                 <a href="avaliacoes.html">Avaliações</a>
                 <a href="localizacao.html">Localização</a>
             </div>
@@ -40,6 +40,7 @@
             <div id="profile-menu" class="profile-menu card-transparente hidden">
                 <a href="usuario.html">Perfil</a>
                 <a href="configuracoes.html">Configurações</a>
+                <a href="reservas.html">Reservas</a>
                 <a href="logout.html" class="logout">Sair</a>
             </div>
 
@@ -52,24 +53,32 @@
             <a href="duvidas.html">Dúvidas</a>
             <a href="contato.html">Contato</a>
             <a href="sobre_nos.html">Sobre Nós</a>
-            <a href="login.html" class="logout">Logout</a>
         </div>
     </header>
     <main>
         <div class="espaçamento-1"></div>
         <div class="background"></div>
 
-        <section class="config-container">
+        <section class="container">
             <h1>Configurações</h1>
-            <div class="config-opcoes">
-                <a href="conta.html" class="config-botao">
+            <div class="opcoes">
+                <a href="conta.html" class="botao">
                     <i class="fas fa-user-cog"></i> Conta do Usuário
                 </a>
-                <a href="tema.html" class="config-botao">
+
+                <a href="seguranca.html" class="botao">
+                    <i class="fas fa-shield-alt"></i> Segurança
+                </a>
+
+                <a href="tema.html" class="botao">
                     <i class="fas fa-palette"></i> Temas
                 </a>
-                <a href="idioma.html" class="config-botao">
+                <a href="idioma.html" class="botao">
                     <i class="fas fa-language"></i> Idioma
+                </a>
+
+                <a href="#" class="botao" onclick="window.history.back()">
+                    <i class="fas fa-arrow-left"></i> Voltar
                 </a>
             </div>
         </section>
@@ -89,6 +98,7 @@
 
             <div class="footer-opções-mobile">
                 <a href="pagina_inicial.html"><i class="fas fa-home"></i><span>Início</span></a>
+                <a href="quartos.html"><i class="fas fa-door-open"></i><span>Quartos</span></a>
                 <a href="reservas.html"><i class="fas fa-calendar-alt"></i><span>Reservas</span></a>
                 <a href="avaliacoes.html"><i class="fas fa-star"></i><span>Avaliações</span></a>
                 <a href="programacao.html"><i class="fas fa-tv"></i><span>Programação</span></a>

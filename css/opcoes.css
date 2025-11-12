@@ -1,5 +1,5 @@
 /* ===== Container Principal ===== */
-.config-container {
+.container {
   background-color: var(--t1);
   max-width: 45rem;
   margin: 6rem auto;
@@ -14,7 +14,7 @@
 }
 
 /* ===== Título ===== */
-.config-container h1 {
+.container h1 {
   font-size: 2.25rem;
   margin-bottom: 2rem;
   color: var(--p3);
@@ -22,13 +22,18 @@
 }
 
 /* ===== Botões das Opções ===== */
-.config-opcoes {
+.opcoes {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
 
-.config-botao {
+.opcoes .fa-user-circle {
+  font-size: 7.5rem;
+}
+
+.botao,
+.opcoes .logout {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,33 +47,37 @@
   transition: all 0.3s ease;
 }
 
-.config-botao:hover {
+.botao:hover,
+.opcoes .logout:hover {
   box-shadow: 0 0 0.625rem var(--p3), 0 0 1.25rem var(--p3);
   transform: scale(1.03);
 }
 
 /* ===== Ícones ===== */
-.config-botao i {
+.botao i,
+.opcoes .logout i {
   font-size: 1.5rem;
 }
 
 /* ===== Responsividade ===== */
 @media (max-width: 768px) {
-  .config-container {
+  .container {
     margin: 4rem 1.5rem;
     padding: 2rem;
   }
 
-  .config-container h1 {
+  .container h1 {
     font-size: 1.75rem;
   }
 
-  .config-botao {
+  .botao,
+  .opcoes .logout {
     font-size: 1.125rem;
     padding: 0.75rem;
   }
 
-  .config-botao i {
+  .botao i,
+  .opcoes .logout i {
     font-size: 1.25rem;
   }
 }
