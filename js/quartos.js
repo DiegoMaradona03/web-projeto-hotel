@@ -56,7 +56,9 @@ async function carregarQuartos() {
           <p><strong>Diária:</strong> R$ ${Number(q.diaria).toFixed(2)}</p>
           ${reservaDoUsuario
           ? `<button class="button-v2 cancelar-reserva-btn" data-id="${reservaDoUsuario.id}">Cancelar Reserva</button>`
-          : `<button class="button-v2 reservar-btn" data-id="${q.id}">Agendar Reserva</button>`
+          : q.reservas && q.reservas.length > 0
+            ? `<button class="button-v2" disabled>Quarto já reservado</button>`
+            : `<button class="button-v2 reservar-btn" data-id="${q.id}">Agendar Reserva</button>`
         }
         </div>
       `;
