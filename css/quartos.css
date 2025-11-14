@@ -424,3 +424,9 @@
 .mensagem.erro {
   background-color: #b03a3a;
 }
+
+.info .disponivel-em {
+  margin-top: 0.5rem;
+  color: var(--p5);
+  font-size: 1.1rem;
+}

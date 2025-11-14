@@ -41,6 +41,7 @@ async function carregarQuartos() {
 
     quartos.forEach((q) => {
       const reservaDoUsuario = q.reservas && q.reservas.find(r => r.usuarioId === usuario.id);
+      const reservaAtiva = q.reservas && q.reservas.length > 0 ? q.reservas[0] : null;
 
       const div = document.createElement("div");
       div.classList.add("quarto");
@@ -54,6 +55,13 @@ async function carregarQuartos() {
           <p>${q.descricao}</p>
           <p><strong>Máx. hóspedes:</strong> ${q.totalOspedes || "Não informado"}</p>
           <p><strong>Diária:</strong> R$ ${Number(q.diaria).toFixed(2)}</p>
+            ${reservaAtiva && !reservaDoUsuario ?
+          `<p class="disponivel-em">
+              <strong>Disponível novamente em:</strong><br>
+                ${new Date(reservaAtiva.dataSaidaPrevista).toLocaleDateString("pt-BR")}
+              </p>`
+          : ""
+        }
           ${reservaDoUsuario
           ? `<button class="button-v2 cancelar-reserva-btn" data-id="${reservaDoUsuario.id}">Cancelar Reserva</button>`
           : q.reservas && q.reservas.length > 0
