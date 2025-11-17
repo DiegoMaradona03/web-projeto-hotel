@@ -166,18 +166,47 @@ function abrirFormularioReserva(idQuarto) {
 
 // ==== 3. Cancelar reserva ====
 async function cancelarReserva(idReserva) {
-  if (!confirm("Tem certeza que deseja cancelar esta reserva?")) return;
+  if (modalAberto) return;
+  modalAberto = true;
 
-  try {
-    await axios.delete(`${API_URL}/reservas/${idReserva}`, {
-      headers: { Authorization: `Bearer ${usuario.token}` },
-    });
-    mostrarMensagem("Reserva cancelada com sucesso!");
-    carregarQuartos();
-  } catch (error) {
-    console.error(error);
-    mostrarMensagem("Erro ao cancelar reserva.", "erro");
-  }
+  const overlay = document.createElement("div");
+  overlay.classList.add("modal-overlay");
+
+  overlay.innerHTML = `
+    <div class="modal-form">
+      <span class="close">&times;</span>
+      <h2>Cancelar Reserva</h2>
+      <p style="font-size:1.2rem; color:var(--p2); margin-bottom:1rem;">
+        Tem certeza que deseja cancelar esta reserva?
+      </p>
+      <div style="display:flex; gap:1rem; width:100%;">
+        <button class="button-v2 confirmar-cancelamento" style="flex:1;">Sim, cancelar</button>
+        <button class="button-v2 cancelar-btn" style="flex:1;">Não, voltar</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  const fecharModal = () => {
+    overlay.remove();
+    modalAberto = false;
+  };
+
+  overlay.querySelector(".close").onclick = fecharModal;
+  overlay.querySelector(".cancelar-btn").onclick = fecharModal;
+
+  overlay.querySelector(".confirmar-cancelamento").onclick = async () => {
+    try {
+      await axios.delete(`${API_URL}/reservas/${idReserva}`, {
+        headers: { Authorization: `Bearer ${usuario.token}` },
+      });
+      mostrarMensagem("Reserva cancelada com sucesso!");
+      carregarQuartos();
+    } catch (error) {
+      console.error(error);
+      mostrarMensagem("Erro ao cancelar reserva.", "erro");
+    }
+  };
 }
 
 // ==== Inicialização ====
