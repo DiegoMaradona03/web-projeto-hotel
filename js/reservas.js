@@ -5,70 +5,73 @@ const container = document.querySelector(".quartos-container");
 const usuario = JSON.parse(localStorage.getItem("usuario"));
 let modalAberto = false;
 
-// ==== Função auxiliar para mensagens ====
-function mostrarMensagem(texto, tipo = "sucesso") {
-  const msg = document.createElement("div");
-  msg.className = `mensagem ${tipo}`;
-  msg.textContent = texto;
-  document.body.appendChild(msg);
-
-  setTimeout(() => {
-    msg.classList.add("visivel");
-  }, 10);
-
-  setTimeout(() => {
-    msg.classList.remove("visivel");
-    setTimeout(() => msg.remove(), 300);
-  }, 3000);
-}
-
-// ==== 1. Buscar e renderizar quartos ====
-async function carregarQuartos() {
-  container.innerHTML = "<p>Carregando quartos...</p>";
+// ================================================================
+// 1. CARREGAR APENAS AS RESERVAS DO USUÁRIO LOGADO
+// ================================================================
+async function carregarReservas() {
+  container.innerHTML = "<p>Carregando suas reservas...</p>";
 
   try {
-    const resp = await axios.get(`${API_URL}/quartos`);
-    const quartos = resp.data;
+    const resp = await axios.get(`${API_URL}/reservas`);
+    const todasReservas = resp.data;
 
-    container.innerHTML = "";
+    // 🔍 Filtrar apenas reservas do usuário logado
+    const minhasReservas = todasReservas.filter(r => r.usuarioId === usuario.id);
 
-    if (quartos.length === 0) {
-      container.innerHTML = `<p style="font-size:1.25rem; color:var(--p3); margin-top:2rem;">
-        Nenhum quarto cadastrado ainda.
-      </p>`;
+    container.innerHTML = `
+      <h1>Quartos que você reservou</h1>
+    `;
+
+    if (minhasReservas.length === 0) {
+      container.innerHTML += `
+        <p style="
+          font-size:1.3rem; 
+          margin-top:1.5rem; 
+          color:var(--p2);
+        ">Você ainda não fez nenhuma reserva.</p>
+      `;
       return;
     }
 
-    quartos.forEach((q) => {
-      const reservaDoUsuario = q.reservas && q.reservas.find(r => r.usuarioId === usuario.id);
+    // =============================
+    // Para cada reserva, buscar o quarto correspondente
+    // =============================
+    for (const reserva of minhasReservas) {
+      const quartoResp = await axios.get(`${API_URL}/quartos/${reserva.quartoId}`);
+      const q = quartoResp.data;
 
       const div = document.createElement("div");
       div.classList.add("quarto");
-      if (q.reservas && q.reservas.length > 0 && !reservaDoUsuario) {
-        div.classList.add("indisponivel");
-      }
+
       div.innerHTML = `
         <img src="${q.foto || "../images/sem-imagem.png"}" alt="Quarto ${q.numero}">
+        
         <div class="info">
-          <h2>${q.nome || "Quarto " + q.numero}</h2>
+          <h2>${q.nome || `Quarto ${q.numero}`}</h2>
+
           <p>${q.descricao}</p>
-          <p><strong>Máx. hóspedes:</strong> ${q.totalOspedes || "Não informado"}</p>
+          <p><strong>Máx. hóspedes:</strong> ${q.totalOcupantes || q.totalOcupantes === 0 ? q.totalOcupantes : "Não informado"}</p>
           <p><strong>Diária:</strong> R$ ${Number(q.diaria).toFixed(2)}</p>
-          ${reservaDoUsuario
-          ? `<button class="button-v2 cancelar-reserva-btn" data-id="${reservaDoUsuario.id}">Cancelar Reserva</button>`
-          : `<button class="button-v2 reservar-btn" data-id="${q.id}">Agendar Reserva</button>`
-        }
+          <p><strong>Entrada prevista:</strong> ${new Date(new Date(reserva.dataEntradaPrevista).getTime() + (1000 * 60 * 60 * 24)).toLocaleDateString()}</p>
+          <p><strong>Saída prevista:</strong> ${new Date(new Date(reserva.dataSaidaPrevista).getTime() + (1000 * 60 * 60 * 24)).toLocaleDateString()}</p>
+          <button class="button-v2 cancelar-reserva-btn" data-id="${reserva.id}">Cancelar Reserva</button>
         </div>
       `;
       container.appendChild(div);
-    });
-  } catch (err) {
-    console.error(err);
-    container.innerHTML = "<p style='color:red;'>Erro ao carregar quartos.</p>";
+    }
+
+  } catch (error) {
+    console.error(error);
+    container.innerHTML = `
+      <p style="color:red; font-size:1.2rem;">Erro ao carregar reservas.</p>
+    `;
   }
 }
 
-// ==== 2. Abrir modal de reserva ====
+// ================================================================
+// 2. CANCELAR RESERVA COM MODAL
+// ================================================================
+
 document.body.addEventListener("click", (e) => {
   if (e.target.classList.contains("reservar-btn")) {
     if (modalAberto) return;
@@ -82,7 +85,8 @@ document.body.addEventListener("click", (e) => {
   }
 });
 
-function abrirFormularioReserva(idQuarto) {
+async function cancelarReserva(idReserva) {
+  if (modalAberto) return;
   modalAberto = true;
 
   const overlay = document.createElement("div");
@@ -91,84 +95,41 @@ function abrirFormularioReserva(idQuarto) {
   overlay.innerHTML = `
     <div class="modal-form">
       <span class="close">&times;</span>
-      <h2>Agendar Reserva</h2>
-      <label>Data de Entrada:</label>
-      <input type="date" id="dataEntradaPrevista">
-      <label>Data de Saída:</label>
-      <input type="date" id="dataSaidaPrevista">
-      <button class="button-v2 confirmar-reserva" data-id="${idQuarto}">Confirmar Reserva</button>
-      <button class="button-v2 cancelar-btn">Cancelar</button>
+      <h2>Cancelar Reserva</h2>
+      <p style="font-size:1.2rem; color:var(--p2); margin-bottom:1rem;">
+        Tem certeza que deseja cancelar esta reserva?
+      </p>
+      <div style="display:flex; gap:1rem; width:100%;">
+        <button class="button-v2 confirmar-cancelamento" style="flex:1;">Sim, cancelar</button>
+        <button class="button-v2 cancelar-btn" style="flex:1;">Não, voltar</button>
+      </div>
     </div>
   `;
   document.body.appendChild(overlay);
 
-  overlay.querySelector(".cancelar-btn").onclick = () => {
-    overlay.remove();
-    modalAberto = false;
-  };
-  overlay.querySelector(".close").onclick = () => {
+  const fecharModal = () => {
     overlay.remove();
     modalAberto = false;
   };
 
-  overlay.querySelector(".confirmar-reserva").onclick = async () => {
-    const entradaPrev = document.getElementById("dataEntradaPrevista").value;
-    const saidaPrev = document.getElementById("dataSaidaPrevista").value;
+  overlay.querySelector(".close").onclick = fecharModal;
+  overlay.querySelector(".cancelar-btn").onclick = fecharModal;
 
-    if (!entradaPrev || !saidaPrev) {
-      mostrarMensagem("Preencha as datas de entrada e saída!", "erro");
-      return;
-    }
-
+  overlay.querySelector(".confirmar-cancelamento").onclick = async () => {
     try {
-      const data = {
-        usuarioId: Number(usuario.id),
-        quartoId: Number(idQuarto),
-        dataEntradaPrevista: new Date(entradaPrev),
-        dataSaidaPrevista: new Date(saidaPrev)
-      }
-      const options = {
-        method: 'POST',
-        url: `${API_URL}/reservas`,
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${usuario.token}`
-        },
-        data: data
-      };
-
-      axios.request(options).then(function (response) {
-        console.log(response.data);
-      }).catch(function (error) {
-        console.error(error);
+      await axios.delete(`${API_URL}/reservas/${idReserva}`, {
+        headers: { Authorization: `Bearer ${usuario.token}` },
       });
-
-      mostrarMensagem("Reserva realizada com sucesso!");
       overlay.remove();
       modalAberto = false;
-      carregarQuartos();
+      carregarReservas();
     } catch (error) {
       console.error(error);
-      mostrarMensagem("Erro ao criar reserva.", "erro");
     }
   };
 }
 
-// ==== 3. Cancelar reserva ====
-async function cancelarReserva(idReserva) {
-  if (!confirm("Tem certeza que deseja cancelar esta reserva?")) return;
-
-  try {
-    await axios.delete(`${API_URL}/reservas/${idReserva}`, {
-      headers: { Authorization: `Bearer ${usuario.token}` },
-    });
-    mostrarMensagem("Reserva cancelada com sucesso!");
-    carregarQuartos();
-  } catch (error) {
-    console.error(error);
-    mostrarMensagem("Erro ao cancelar reserva.", "erro");
-  }
-}
-
-// ==== Inicialização ====
-carregarQuartos();
+// ================================================================
+// 3. INICIALIZAR
+// ================================================================
+carregarReservas();

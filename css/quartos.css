@@ -400,31 +400,6 @@
   }
 }
 
-.mensagem {
-  position: fixed;
-  top: 1.5rem;
-  right: -20rem;
-  background-color: var(--p3);
-  color: var(--p2);
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-  font-family: 'Mr Darcy W01 Regular', serif;
-  font-size: 1rem;
-  box-shadow: 0 0 1rem var(--t3);
-  transition: right 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-  z-index: 2000;
-}
-
-.mensagem.visivel {
-  right: 1.5rem;
-  opacity: 1;
-}
-
-.mensagem.erro {
-  background-color: #b03a3a;
-}
-
 .info .disponivel-em {
   margin-top: 0.5rem;
   color: var(--p5);

@@ -20,19 +20,5 @@ form.addEventListener('submit', async (e) => {
         }
     } catch (error) {
         console.error(error);
-        alert(error.response?.data?.error || 'Usuário ou senha inválidos');
     }
 });
-
-function toggleSenha(icon) {
-  const input = icon.previousElementSibling;
-  if (input.type === "password") {
-    input.type = "text";
-    icon.classList.remove("fa-eye");
-    icon.classList.add("fa-eye-slash");
-  } else {
-    input.type = "password";
-    icon.classList.remove("fa-eye-slash");
-    icon.classList.add("fa-eye");
-  }
-}

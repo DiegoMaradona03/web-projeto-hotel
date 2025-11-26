@@ -5,23 +5,6 @@ const container = document.querySelector(".quartos-container");
 const usuario = JSON.parse(localStorage.getItem("usuario"));
 let modalAberto = false;
 
-// ==== Função auxiliar para mensagens ====
-function mostrarMensagem(texto, tipo = "sucesso") {
-  const msg = document.createElement("div");
-  msg.className = `mensagem ${tipo}`;
-  msg.textContent = texto;
-  document.body.appendChild(msg);
-
-  setTimeout(() => {
-    msg.classList.add("visivel");
-  }, 10);
-
-  setTimeout(() => {
-    msg.classList.remove("visivel");
-    setTimeout(() => msg.remove(), 300);
-  }, 3000);
-}
-
 // ==== 1. Buscar e renderizar quartos ====
 async function carregarQuartos() {
   container.innerHTML = "<p>Carregando quartos...</p>";
@@ -58,7 +41,7 @@ async function carregarQuartos() {
             ${reservaAtiva && !reservaDoUsuario ?
           `<p class="disponivel-em">
               <strong>Disponível novamente em:</strong><br>
-                ${new Date(reservaAtiva.dataSaidaPrevista).toLocaleDateString("pt-BR")}
+                ${new Date(new Date(reservaAtiva.dataSaidaPrevista).getTime()+(1000 * 60 * 60 * 24)).toLocaleDateString()}
               </p>`
           : ""
         }
@@ -126,7 +109,7 @@ function abrirFormularioReserva(idQuarto) {
     const saidaPrev = document.getElementById("dataSaidaPrevista").value;
 
     if (!entradaPrev || !saidaPrev) {
-      mostrarMensagem("Preencha as datas de entrada e saída!", "erro");
+      console.error("Datas inválidas.");
       return;
     }
 
@@ -148,18 +131,15 @@ function abrirFormularioReserva(idQuarto) {
       };
 
       axios.request(options).then(function (response) {
+        modalAberto = false;
+        overlay.remove();
         console.log(response.data);
+        carregarQuartos();
       }).catch(function (error) {
         console.error(error);
       });
-
-      mostrarMensagem("Reserva realizada com sucesso!");
-      overlay.remove();
-      modalAberto = false;
-      carregarQuartos();
     } catch (error) {
       console.error(error);
-      mostrarMensagem("Erro ao criar reserva.", "erro");
     }
   };
 }
@@ -200,11 +180,11 @@ async function cancelarReserva(idReserva) {
       await axios.delete(`${API_URL}/reservas/${idReserva}`, {
         headers: { Authorization: `Bearer ${usuario.token}` },
       });
-      mostrarMensagem("Reserva cancelada com sucesso!");
+      overlay.remove();
+      modalAberto = false;
       carregarQuartos();
     } catch (error) {
       console.error(error);
-      mostrarMensagem("Erro ao cancelar reserva.", "erro");
     }
   };
 }

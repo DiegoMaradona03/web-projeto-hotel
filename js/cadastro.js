@@ -33,6 +33,5 @@ form.addEventListener('submit', async (e) => {
         }
     } catch (error) {
         console.error(error);
-        alert(error.response?.data?.error || 'Erro ao cadastrar usuário');
     }
 });

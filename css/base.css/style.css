@@ -446,12 +446,19 @@ body {
 
 @media (max-width: 767px) {
     .footer {
-        padding: 0.3rem 1.5rem;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
         position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: 1000;
+        padding: 0.3rem 1.5rem;
+        padding: 0.3rem 1.5rem env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+        z-index: 3;
+        height: 4rem;
     }
 
     .footer-socials {
@@ -465,11 +472,11 @@ body {
     .footer-opções-mobile {
         display: flex;
         justify-content: center;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
     .footer-opções-mobile a {
-        width: 25%;
+        width: 12.5%;
         height: 3.5rem;
         display: grid;
         align-items: center;
@@ -536,5 +543,5 @@ textarea:focus {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
