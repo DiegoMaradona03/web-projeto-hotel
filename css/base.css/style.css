@@ -1,3 +1,5 @@
+@import url('https://db.onlinewebfonts.com/c/6ab889bdda7be21423a47e6deea43f6a?family=Mr+Darcy+W01+Regular');
+
 html,
 body {
     padding: 0;
@@ -10,7 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Mr Darcy W01 Regular', cursive, sans-serif ;
     background-color: var(--p1);
     color: var(--p2);
     overflow-x: hidden;
@@ -57,6 +59,10 @@ body {
 .header-links-esquerdo a,
 .header-links-direito a {
     color: var(--p2);
+    text-shadow: var(--p3) 2px 2px 4px,
+               var(--p3) -2px -2px 4px,
+               var(--p3) 2px -2px 4px,
+               var(--p3) -2px 2px 4px;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -64,6 +70,10 @@ body {
 .header-links-esquerdo a:hover,
 .header-links-direito a:hover {
     color: var(--p4);
+    text-shadow: var(--p3) 2px 2px 4px,
+               var(--p3) -2px -2px 4px,
+               var(--p3) 2px -2px 4px,
+               var(--p3) -2px 2px 4px;
 }
 
 .header-links {
