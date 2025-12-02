@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const rootStyles = getComputedStyle(document.documentElement);
-    const t1 = rootStyles.getPropertyValue("--t1").trim();
+    const t1 = rootStyles.getPropertyValue("--p4").trim();
 
     // Atualiza o meta theme-color (Android)
     let metaTheme = document.querySelector('meta[name="theme-color"]');
