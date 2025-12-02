@@ -1,6 +1,6 @@
 /* ===== Login Container ===== */
 .login-container {
-    background-color: var(--t1);
+    background-color: var(--p1);
     max-width: 45rem; /* equivalente a ~560px */
     margin: 6rem auto;
     padding: 3rem;

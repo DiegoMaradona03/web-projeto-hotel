@@ -14,142 +14,150 @@
 </head>
 
 <body>
-    <header class="header card-transparente">
-        <div class="header-container">
-            <div class="header-links-esquerdo">
-                <a href="pagina_inicial.html">Início</a>
-                <a href="quartos.html">Quartos</a>
-                <a href="avaliacoes.html">Avaliações</a>
+
+    <div class="background">
+
+        <header class="header card-transparente">
+            <div class="header-container">
+                <div class="header-links-esquerdo">
+                    <a href="pagina_inicial.html">Início</a>
+                    <a href="quartos.html">Quartos</a>
+                    <a href="avaliacoes.html">Avaliações</a>
+                    <a href="localizacao.html">Localização</a>
+                </div>
+
+                <div class="logo">
+                    <img src="../images/hazbin.png" alt="hotel">
+                </div>
+
+                <div class="header-links-direito">
+                    <a href="contato.html">Contato</a>
+                    <a href="sobre_nos.html">Sobre Nós</a>
+                    <a href="programacao.html">Programação</a>
+                    <a href="duvidas.html">Dúvidas</a>
+                </div>
+                <button class="profile-menu-button" id="profile-menu-button">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div id="profile-menu" class="profile-menu card-transparente hidden">
+                    <a href="usuario.html">Perfil</a>
+                    <a href="configuracoes.html">Configurações</a>
+                    <a href="reservas.html">Reservas</a>
+                    <a href="logout.html" class="logout">Sair</a>
+                </div>
+
+                <button class="mobile-menu-button" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="mobile-menu card-transparente hidden">
                 <a href="localizacao.html">Localização</a>
-            </div>
-
-            <div class="logo">
-                <img src="../images/hazbin.png" alt="hotel">
-            </div>
-
-            <div class="header-links-direito">
+                <a href="duvidas.html">Dúvidas</a>
                 <a href="contato.html">Contato</a>
                 <a href="sobre_nos.html">Sobre Nós</a>
-                <a href="programacao.html">Programação</a>
-                <a href="duvidas.html">Dúvidas</a>
             </div>
-            <button class="profile-menu-button" id="profile-menu-button">
-                <i class="fas fa-user-circle"></i>
-            </button>
-            <div id="profile-menu" class="profile-menu card-transparente hidden">
-                <a href="usuario.html">Perfil</a>
-                <a href="configuracoes.html">Configurações</a>
-                <a href="reservas.html">Reservas</a>
-                <a href="logout.html" class="logout">Sair</a>
+        </header>
+        <main>
+            <div class="espaçamento-1"></div>
+            <div class="avaliacoes-container" id="avaliacoes-container">
+                <div class="avaliacao">
+                    <div class="avaliacao-header">
+                        <img src="../images/lucifer2.png" alt="Lucifer" class="perfil-img">
+                        <h3>@Lucifer_Morningstar</h3>
+                    </div>
+                    <p>"Excelente estadia! O hotel da minha filha é o melhor de toda a Cidade Pentagrama."</p>
+                    <div class="avaliacao-actions">
+                        <button class="like">👍 <span class="like-count">666</span></button>
+                        <button class="dislike">👎 <span class="dislike-count">2</span></button>
+                        <button class="responder">Responder</button>
+                    </div>
+                </div>
+
+                <div class="avaliacao">
+                    <div class="avaliacao-header">
+                        <img src="../images/vox.png" alt="Vox" class="perfil-img">
+                        <h3>@Vox_Television</h3>
+                    </div>
+                    <p>"Qualidade péssima, além disso tem sons de rádio o tempo todo tocando. Pior experiência que já
+                        tive
+                        com um estabelecimento."</p>
+                    <div class="avaliacao-actions">
+                        <button class="like">👍 <span class="like-count">1</span></button>
+                        <button class="dislike">👎 <span class="dislike-count">2</span></button>
+                        <button class="responder">Responder</button>
+                    </div>
+                </div>
+
+                <div class="avaliacao">
+                    <div class="avaliacao-header">
+                        <img src="../images/alastor.png" alt="Radio" class="perfil-img">
+                        <h3>@Radio_Demon</h3>
+                    </div>
+                    <p>"Agradeço pelas críticas irrelevantes e mal justificadas, Vox. Dito isso, serviço de ótima
+                        qualidade.
+                        Recomendo."</p>
+                    <div class="avaliacao-actions">
+                        <button class="like">👍 <span class="like-count">315</span></button>
+                        <button class="dislike">👎 <span class="dislike-count">2</span></button>
+                        <button class="responder">Responder</button>
+                    </div>
+                </div>
+
+                <div class="avaliacao">
+                    <div class="avaliacao-header">
+                        <img src="../images/velvette.png" alt="Velvette" class="perfil-img">
+                        <h3>@Velvette_Fashionist</h3>
+                    </div>
+                    <p>"Esse design de hotel é simplesmente di-vi-no! Super recomendo!"</p>
+                    <div class="avaliacao-actions">
+                        <button class="like">👍 <span class="like-count">1017</span></button>
+                        <button class="dislike">👎 <span class="dislike-count">2</span></button>
+                        <button class="responder">Responder</button>
+                    </div>
+                </div>
+
+                <div class="avaliacao">
+                    <div class="avaliacao-header">
+                        <img src="../images/rosie.png" alt="Rosie" class="perfil-img">
+                        <h3>@Rosie_the_Cannibal</h3>
+                    </div>
+                    <p>"A proprietária é um amor de pessoa! A limpeza estava impecável, e a organização é de outro
+                        nível.
+                        Hotel maravilhoso!"</p>
+                    <div class="avaliacao-actions">
+                        <button class="like">👍 <span class="like-count">90</span></button>
+                        <button class="dislike">👎 <span class="dislike-count">2</span></button>
+                        <button class="responder">Responder</button>
+                    </div>
+                </div>
+
+                <div class="avaliacao">
+                    <div class="avaliacao-header">
+                        <img src="../images/valentino.png" alt="Valentino" class="perfil-img">
+                        <h3>@Valentino_Productions</h3>
+                    </div>
+                    <p>Seu comentário foi privado.</p>
+                    <div class="avaliacao-actions">
+                        <button class="like">👍 <span class="like-count">1</span></button>
+                        <button class="dislike">👎 <span class="dislike-count">1023</span></button>
+                        <button class="responder">Responder</button>
+                    </div>
+                </div>
+
+                <div class="comentario-container">
+                    <h3>Adicione um comentário</h3>
+                    <textarea id="novo-comentario" placeholder="Escreva seu comentário aqui..." rows="4"></textarea>
+                    <br>
+                    <button id="enviar-comentario" class="enviar-comentario">Enviar</button>
+                </div>
+
             </div>
+            <div class="espaçamento-2"></div>
+        </main>
 
-            <button class="mobile-menu-button" id="mobile-menu-button">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        <div id="mobile-menu" class="mobile-menu card-transparente hidden">
-            <a href="localizacao.html">Localização</a>
-            <a href="duvidas.html">Dúvidas</a>
-            <a href="contato.html">Contato</a>
-            <a href="sobre_nos.html">Sobre Nós</a>
-        </div>
-    </header>
-    <main>
-        <div class="espaçamento-1"></div>
-        <div class="avaliacoes-container" id="avaliacoes-container">
-            <div class="avaliacao">
-                <div class="avaliacao-header">
-                    <img src="../images/lucifer2.png" alt="Lucifer" class="perfil-img">
-                    <h3>@Lucifer_Morningstar</h3>
-                </div>
-                <p>"Excelente estadia! O hotel da minha filha é o melhor de toda a Cidade Pentagrama."</p>
-                <div class="avaliacao-actions">
-                    <button class="like">👍 <span class="like-count">666</span></button>
-                    <button class="dislike">👎 <span class="dislike-count">2</span></button>
-                    <button class="responder">Responder</button>
-                </div>
-            </div>
+    </div>
 
-            <div class="avaliacao">
-                <div class="avaliacao-header">
-                    <img src="../images/vox.png" alt="Vox" class="perfil-img">
-                    <h3>@Vox_Television</h3>
-                </div>
-                <p>"Qualidade péssima, além disso tem sons de rádio o tempo todo tocando. Pior experiência que já tive
-                    com um estabelecimento."</p>
-                <div class="avaliacao-actions">
-                    <button class="like">👍 <span class="like-count">1</span></button>
-                    <button class="dislike">👎 <span class="dislike-count">2</span></button>
-                    <button class="responder">Responder</button>
-                </div>
-            </div>
-
-            <div class="avaliacao">
-                <div class="avaliacao-header">
-                    <img src="../images/alastor.png" alt="Radio" class="perfil-img">
-                    <h3>@Radio_Demon</h3>
-                </div>
-                <p>"Agradeço pelas críticas irrelevantes e mal justificadas, Vox. Dito isso, serviço de ótima qualidade.
-                    Recomendo."</p>
-                <div class="avaliacao-actions">
-                    <button class="like">👍 <span class="like-count">315</span></button>
-                    <button class="dislike">👎 <span class="dislike-count">2</span></button>
-                    <button class="responder">Responder</button>
-                </div>
-            </div>
-
-            <div class="avaliacao">
-                <div class="avaliacao-header">
-                    <img src="../images/velvette.png" alt="Velvette" class="perfil-img">
-                    <h3>@Velvette_Fashionist</h3>
-                </div>
-                <p>"Esse design de hotel é simplesmente di-vi-no! Super recomendo!"</p>
-                <div class="avaliacao-actions">
-                    <button class="like">👍 <span class="like-count">1017</span></button>
-                    <button class="dislike">👎 <span class="dislike-count">2</span></button>
-                    <button class="responder">Responder</button>
-                </div>
-            </div>
-
-            <div class="avaliacao">
-                <div class="avaliacao-header">
-                    <img src="../images/rosie.png" alt="Rosie" class="perfil-img">
-                    <h3>@Rosie_the_Cannibal</h3>
-                </div>
-                <p>"A proprietária é um amor de pessoa! A limpeza estava impecável, e a organização é de outro nível.
-                    Hotel maravilhoso!"</p>
-                <div class="avaliacao-actions">
-                    <button class="like">👍 <span class="like-count">90</span></button>
-                    <button class="dislike">👎 <span class="dislike-count">2</span></button>
-                    <button class="responder">Responder</button>
-                </div>
-            </div>
-
-            <div class="avaliacao">
-                <div class="avaliacao-header">
-                    <img src="../images/valentino.png" alt="Valentino" class="perfil-img">
-                    <h3>@Valentino_Productions</h3>
-                </div>
-                <p>Seu comentário foi privado.</p>
-                <div class="avaliacao-actions">
-                    <button class="like">👍 <span class="like-count">1</span></button>
-                    <button class="dislike">👎 <span class="dislike-count">1023</span></button>
-                    <button class="responder">Responder</button>
-                </div>
-            </div>
-
-            <div class="comentario-container">
-                <h3>Adicione um comentário</h3>
-                <textarea id="novo-comentario" placeholder="Escreva seu comentário aqui..." rows="4"></textarea>
-                <br>
-                <button id="enviar-comentario" class="enviar-comentario">Enviar</button>
-            </div>
-
-        </div>
-        <div class="espaçamento-2"></div>
-    </main>
-
-    <footer class="footer card-transparente">
+    <footer class="footer">
         <div class="footer-container">
             <p>© Project designed by Charlie Morningstar, the Princess of Hell, and directed by Alastor, the Radio
                 Demon.</p>

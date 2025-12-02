@@ -14,48 +14,51 @@
 </head>
 
 <body>
+
     <div class="background">
 
-    <header class="header card-transparente">
-        <div class="header-container">
-            <div class="logo">
-                <img src="../images/hazbin.png" alt="hotel">
-            </div>
+        <header class="header card-transparente">
+            <div class="header-container">
+                <div class="logo">
+                    <img src="../images/hazbin.png" alt="hotel">
+                </div>
 
-            <div class="header-links">
-                <h2>Seja muito bem-vindo, caro residente,<br> ao Hazbin Hotel!</h2>
+                <div class="header-links">
+                    <h2>Seja muito bem-vindo, caro residente,<br> ao Hazbin Hotel!</h2>
+                    <a href="login.html">Login</a>
+                    <a href="cadastro.html">Cadastrar</a>
+                </div>
+
+                <button class="mobile-menu-button" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="mobile-menu card-transparente hidden">
                 <a href="login.html">Login</a>
                 <a href="cadastro.html">Cadastrar</a>
             </div>
+        </header>
 
-            <button class="mobile-menu-button" id="mobile-menu-button">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        <div id="mobile-menu" class="mobile-menu card-transparente hidden">
-            <a href="login.html">Login</a>
-            <a href="cadastro.html">Cadastrar</a>
-        </div>
-    </header>
+        <main>
+            <div class="espaçamento-1"></div>
+            <div class="login-container">
+                <h1>Acesse sua conta</h1>
+                <form class="login-form">
+                    <label for="email">E-mail</label>
+                    <input type="text" id="email" name="email" placeholder="Digite seu email" required>
 
-    <main>
-        <div class="espaçamento-1"></div>
-        <div class="login-container">
-            <h1>Acesse sua conta</h1>
-            <form class="login-form">
-                <label for="email">E-mail</label>
-                <input type="text" id="email" name="email" placeholder="Digite seu email" required>
+                    <label for="senha">Senha</label>
+                    <div class="campo-senha">
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                        <i class="fa-solid fa-eye toggle-olho" onclick="toggleSenha(this)"></i>
+                    </div>
 
-                <label for="senha">Senha</label>
-                <div class="campo-senha">
-                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
-                    <i class="fa-solid fa-eye toggle-olho" onclick="toggleSenha(this)"></i>
-                </div>
+                    <button type="submit" class="btn-login">Login</button>
+                </form>
+                <div class="espaçamento-2"></div>
+        </main>
 
-                <button type="submit" class="btn-login">Login</button>
-            </form>
-            <div class="espaçamento-2"></div>
-    </main>
+    </div>
 
     <footer class="footer">
         <div class="footer-container">
@@ -77,7 +80,6 @@
             </div>
         </div>
     </footer>
-    </div>
     <script src="../js/mains.js/main.js"></script>
     <script type="module" src="../js/login.js"></script>
 </body>

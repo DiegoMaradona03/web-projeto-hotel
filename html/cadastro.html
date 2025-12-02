@@ -14,61 +14,62 @@
 </head>
 
 <body>
+    <div class="background">
 
-    <header class="header card-transparente">
-        <div class="header-container">
-            <div class="logo">
-                <img src="../images/hazbin.png" alt="hotel">
+        <header class="header card-transparente">
+            <div class="header-container">
+                <div class="logo">
+                    <img src="../images/hazbin.png" alt="hotel">
+                </div>
+
+                <div class="header-links">
+                    <h2>Seja muito bem-vindo, caro residente,<br> ao Hazbin Hotel!</h2>
+                    <a href="login.html">Login</a>
+                    <a href="cadastro.html">Cadastrar</a>
+                </div>
+
+                <button class="mobile-menu-button" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-
-            <div class="header-links">
-                <h2>Seja muito bem-vindo, caro residente,<br> ao Hazbin Hotel!</h2>
+            <div id="mobile-menu" class="mobile-menu card-transparente hidden">
                 <a href="login.html">Login</a>
                 <a href="cadastro.html">Cadastrar</a>
             </div>
+        </header>
 
-            <button class="mobile-menu-button" id="mobile-menu-button">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        <div id="mobile-menu" class="mobile-menu card-transparente hidden">
-            <a href="login.html">Login</a>
-            <a href="cadastro.html">Cadastrar</a>
-        </div>
-    </header>
+        <main>
+            <div class="espaçamento-1"></div>
+            <div class="cadastro-container">
+                <h1>Crie sua Conta</h1>
+                <form class="cadastro-form">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
 
-    <main>
-        <div class="espaçamento-1"></div>
-        <div class="cadastro-container">
-            <h1>Crie sua Conta</h1>
-            <form class="cadastro-form">
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email" required>
 
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                    <label for="senha">Senha</label>
+                    <div class="campo-senha">
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                        <i class="fa-solid fa-eye toggle-olho" onclick="toggleSenha(this)"></i>
+                    </div>
 
-                <label for="senha">Senha</label>
-                <div class="campo-senha">
-                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
-                    <i class="fa-solid fa-eye toggle-olho" onclick="toggleSenha(this)"></i>
-                </div>
+                    <label for="CPF">CPF</label>
+                    <input type="cpf" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
 
-                <label for="CPF">CPF</label>
-                <input type="cpf" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
+                    <label for="telefone">Telefone</label>
+                    <input type="telefone" id="telefone" name="telefone" placeholder="Digite seu número telefone">
 
-                <label for="telefone">Telefone</label>
-                <input type="telefone" id="telefone" name="telefone" placeholder="Digite seu número telefone">
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </div>
 
-                <button type="submit">Cadastrar</button>
-            </form>
-        </div>
+            <div class="espaçamento-2"></div>
+        </main>
 
-        <div class="espaçamento-2"></div>
-    </main>
-
-    <script src="../js/mains.js/main.js"></script>
-    <script type="module" src="../js/cadastro.js"></script>
+        <script src="../js/mains.js/main.js"></script>
+        <script type="module" src="../js/cadastro.js"></script>
 </body>
 
 </html>

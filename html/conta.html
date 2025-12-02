@@ -15,147 +15,151 @@
 
 <body>
 
-    <header class="header card-transparente">
-        <div class="header-container">
-            <div class="header-links-esquerdo">
-                <a href="pagina_inicial.html">Início</a>
-                <a href="quartos.html">Quartos</a>
-                <a href="avaliacoes.html">Avaliações</a>
+    <div class="background">
+
+        <header class="header card-transparente">
+            <div class="header-container">
+                <div class="header-links-esquerdo">
+                    <a href="pagina_inicial.html">Início</a>
+                    <a href="quartos.html">Quartos</a>
+                    <a href="avaliacoes.html">Avaliações</a>
+                    <a href="localizacao.html">Localização</a>
+                </div>
+
+                <div class="logo">
+                    <img src="../images/hazbin.png" alt="hotel">
+                </div>
+
+                <div class="header-links-direito">
+                    <a href="contato.html">Contato</a>
+                    <a href="sobre_nos.html">Sobre Nós</a>
+                    <a href="programacao.html">Programação</a>
+                    <a href="duvidas.html">Dúvidas</a>
+                </div>
+                <button class="profile-menu-button" id="profile-menu-button">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div id="profile-menu" class="profile-menu card-transparente hidden">
+                    <a href="usuario.html">Perfil</a>
+                    <a href="configuracoes.html">Configurações</a>
+                    <a href="reservas.html">Reservas</a>
+                    <a href="logout.html" class="logout">Sair</a>
+                </div>
+
+                <button class="mobile-menu-button" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="mobile-menu card-transparente hidden">
                 <a href="localizacao.html">Localização</a>
-            </div>
-
-            <div class="logo">
-                <img src="../images/hazbin.png" alt="hotel">
-            </div>
-
-            <div class="header-links-direito">
+                <a href="duvidas.html">Dúvidas</a>
                 <a href="contato.html">Contato</a>
                 <a href="sobre_nos.html">Sobre Nós</a>
-                <a href="programacao.html">Programação</a>
-                <a href="duvidas.html">Dúvidas</a>
             </div>
-            <button class="profile-menu-button" id="profile-menu-button">
-                <i class="fas fa-user-circle"></i>
-            </button>
-            <div id="profile-menu" class="profile-menu card-transparente hidden">
-                <a href="usuario.html">Perfil</a>
-                <a href="configuracoes.html">Configurações</a>
-                <a href="reservas.html">Reservas</a>
-                <a href="logout.html" class="logout">Sair</a>
-            </div>
+        </header>
+        <main>
+            <div class="espaçamento-1"></div>
 
-            <button class="mobile-menu-button" id="mobile-menu-button">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        <div id="mobile-menu" class="mobile-menu card-transparente hidden">
-            <a href="localizacao.html">Localização</a>
-            <a href="duvidas.html">Dúvidas</a>
-            <a href="contato.html">Contato</a>
-            <a href="sobre_nos.html">Sobre Nós</a>
-        </div>
-    </header>
-    <main>
-        <div class="espaçamento-1"></div>
+            <div class="config-container">
+                <h1>Configurações da Conta</h1>
 
-        <div class="config-container">
-            <h1>Configurações da Conta</h1>
+                <form class="config-form" id="config-form">
 
-            <form class="config-form" id="config-form">
-
-                <div class="foto-perfil-area">
-                    <div class="foto-wrapper">
-                        <img id="preview-foto" src="../images/default-user.png" alt="Foto de perfil">
-                        <label class="btn-foto disabled" id="btn-foto" for="foto-input">
-                            <i class="fas fa-camera"></i>
-                        </label>
+                    <div class="foto-perfil-area">
+                        <div class="foto-wrapper">
+                            <img id="preview-foto" src="../images/default-user.png" alt="Foto de perfil">
+                            <label class="btn-foto disabled" id="btn-foto" for="foto-input">
+                                <i class="fas fa-camera"></i>
+                            </label>
+                        </div>
+                        <input type="file" id="foto-input" accept="image/*">
                     </div>
-                    <input type="file" id="foto-input" accept="image/*">
+
+                    <label>Nome completo:</label>
+                    <input type="text" id="nome" disabled>
+
+                    <label>E-mail:</label>
+                    <input type="email" id="email" disabled>
+
+                    <label>CPF:</label>
+                    <input type="text" id="cpf" disabled>
+
+                    <label>Senha:</label>
+                    <input type="password" id="senha" disabled>
+                </form>
+
+                <div class="botoes">
+                    <button id="btn-editar" class="btn-editar">Editar</button>
+                    <button id="btn-cancelar-edicao" class="btn-cancelar-edicao hidden">Cancelar</button>
+                    <button id="btn-salvar" class="btn-salvar hidden">Salvar alterações</button>
                 </div>
 
-                <label>Nome completo:</label>
-                <input type="text" id="nome" disabled>
+                <div class="telefones-container">
+                    <h2>Telefones cadastrados</h2>
+                    <ul id="lista-telefones"></ul>
 
-                <label>E-mail:</label>
-                <input type="email" id="email" disabled>
+                    <button id="btn-add-telefone" class="btn-editar">
+                        + Adicionar telefone
+                    </button>
+                </div>
 
-                <label>CPF:</label>
-                <input type="text" id="cpf" disabled>
+                <div class="excluir-area">
+                    <h2>Excluir conta</h2>
+                    <p>Esta ação é permanente e irreversível.</p>
 
-                <label>Senha:</label>
-                <input type="password" id="senha" disabled>
-            </form>
-
-            <div class="botoes">
-                <button id="btn-editar" class="btn-editar">Editar</button>
-                <button id="btn-cancelar-edicao" class="btn-cancelar-edicao hidden">Cancelar</button>
-                <button id="btn-salvar" class="btn-salvar hidden">Salvar alterações</button>
-            </div>
-
-            <div class="telefones-container">
-                <h2>Telefones cadastrados</h2>
-                <ul id="lista-telefones"></ul>
-
-                <button id="btn-add-telefone" class="btn-editar">
-                    + Adicionar telefone
-                </button>
-            </div>
-
-            <div class="excluir-area">
-                <h2>Excluir conta</h2>
-                <p>Esta ação é permanente e irreversível.</p>
-
-                <button class="btn-excluir" id="abrir-modal-excluir">
-                    <i class="fas fa-trash"></i> Excluir conta
-                </button>
-            </div>
-        </div>
-
-        <div class="modal-excluir hidden" id="modal-excluir">
-            <div class="modal-content">
-                <h2>Confirmar exclusão</h2>
-                <p>Digite sua senha para confirmar:</p>
-                <input type="password" id="senha-confirmar" placeholder="Sua senha">
-
-                <div class="modal-botoes">
-                    <button class="btn-cancelar" id="cancelar-excluir">Cancelar</button>
-                    <button class="btn-confirmar" id="confirmar-excluir">Excluir</button>
+                    <button class="btn-excluir" id="abrir-modal-excluir">
+                        <i class="fas fa-trash"></i> Excluir conta
+                    </button>
                 </div>
             </div>
-        </div>
 
-        <!-- MODAL EDITAR / ADICIONAR TELEFONE -->
-        <div class="modal-excluir hidden" id="modal-telefone">
-            <div class="modal-content">
-                <h2 id="modal-telefone-titulo">Editar Telefone</h2>
-                <input type="text" id="telefone-input" placeholder="Digite o número" class="input-modal">
+            <div class="modal-excluir hidden" id="modal-excluir">
+                <div class="modal-content">
+                    <h2>Confirmar exclusão</h2>
+                    <p>Digite sua senha para confirmar:</p>
+                    <input type="password" id="senha-confirmar" placeholder="Sua senha">
 
-                <div class="modal-botoes">
-                    <button class="btn-cancelar"
-                        onclick="document.getElementById('modal-telefone').classList.add('hidden')">Cancelar</button>
-                    <button class="btn-confirmar" id="confirmar-telefone">Salvar</button>
+                    <div class="modal-botoes">
+                        <button class="btn-cancelar" id="cancelar-excluir">Cancelar</button>
+                        <button class="btn-confirmar" id="confirmar-excluir">Excluir</button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- MODAL CONFIRMAR EXCLUSÃO TELEFONE -->
-        <div class="modal-excluir hidden" id="modal-excluir-telefone">
-            <div class="modal-content">
-                <h2>Excluir telefone?</h2>
-                <p>Esta ação não poderá ser desfeita.</p>
+            <!-- MODAL EDITAR / ADICIONAR TELEFONE -->
+            <div class="modal-excluir hidden" id="modal-telefone">
+                <div class="modal-content">
+                    <h2 id="modal-telefone-titulo">Editar Telefone</h2>
+                    <input type="text" id="telefone-input" placeholder="Digite o número" class="input-modal">
 
-                <div class="modal-botoes">
-                    <button class="btn-cancelar"
-                        onclick="document.getElementById('modal-excluir-telefone').classList.add('hidden')">Cancelar</button>
-                    <button class="btn-confirmar" id="confirmar-excluir-telefone">Excluir</button>
+                    <div class="modal-botoes">
+                        <button class="btn-cancelar"
+                            onclick="document.getElementById('modal-telefone').classList.add('hidden')">Cancelar</button>
+                        <button class="btn-confirmar" id="confirmar-telefone">Salvar</button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="espaçamento-2"></div>
-    </main>
+            <!-- MODAL CONFIRMAR EXCLUSÃO TELEFONE -->
+            <div class="modal-excluir hidden" id="modal-excluir-telefone">
+                <div class="modal-content">
+                    <h2>Excluir telefone?</h2>
+                    <p>Esta ação não poderá ser desfeita.</p>
 
-    <footer class="footer card-transparente">
+                    <div class="modal-botoes">
+                        <button class="btn-cancelar"
+                            onclick="document.getElementById('modal-excluir-telefone').classList.add('hidden')">Cancelar</button>
+                        <button class="btn-confirmar" id="confirmar-excluir-telefone">Excluir</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="espaçamento-2"></div>
+        </main>
+
+    </div>
+
+    <footer class="footer">
         <div class="footer-container">
             <p>© Project designed by Charlie Morningstar, the Princess of Hell, and directed by Alastor, the Radio
                 Demon.</p>

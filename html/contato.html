@@ -14,84 +14,89 @@
 </head>
 
 <body>
-    <header class="header card-transparente">
-        <div class="header-container">
-            <div class="header-links-esquerdo">
-                <a href="pagina_inicial.html">Início</a>
-                <a href="quartos.html">Quartos</a>
-                <a href="avaliacoes.html">Avaliações</a>
+
+    <div class="background">
+
+        <header class="header card-transparente">
+            <div class="header-container">
+                <div class="header-links-esquerdo">
+                    <a href="pagina_inicial.html">Início</a>
+                    <a href="quartos.html">Quartos</a>
+                    <a href="avaliacoes.html">Avaliações</a>
+                    <a href="localizacao.html">Localização</a>
+                </div>
+
+                <div class="logo">
+                    <img src="../images/hazbin.png" alt="hotel">
+                </div>
+
+                <div class="header-links-direito">
+                    <a href="contato.html">Contato</a>
+                    <a href="sobre_nos.html">Sobre Nós</a>
+                    <a href="programacao.html">Programação</a>
+                    <a href="duvidas.html">Dúvidas</a>
+                </div>
+                <button class="profile-menu-button" id="profile-menu-button">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div id="profile-menu" class="profile-menu card-transparente hidden">
+                    <a href="usuario.html">Perfil</a>
+                    <a href="configuracoes.html">Configurações</a>
+                    <a href="reservas.html">Reservas</a>
+                    <a href="logout.html" class="logout">Sair</a>
+                </div>
+
+                <button class="mobile-menu-button" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="mobile-menu card-transparente hidden">
                 <a href="localizacao.html">Localização</a>
-            </div>
-
-            <div class="logo">
-                <img src="../images/hazbin.png" alt="hotel">
-            </div>
-
-            <div class="header-links-direito">
+                <a href="duvidas.html">Dúvidas</a>
                 <a href="contato.html">Contato</a>
                 <a href="sobre_nos.html">Sobre Nós</a>
-                <a href="programacao.html">Programação</a>
-                <a href="duvidas.html">Dúvidas</a>
             </div>
-            <button class="profile-menu-button" id="profile-menu-button">
-                <i class="fas fa-user-circle"></i>
-            </button>
-            <div id="profile-menu" class="profile-menu card-transparente hidden">
-                <a href="usuario.html">Perfil</a>
-                <a href="configuracoes.html">Configurações</a>
-                <a href="reservas.html">Reservas</a>
-                <a href="logout.html" class="logout">Sair</a>
-            </div>
+        </header>
+        <main>
+            <div class="espaçamento-1"></div>
 
-            <button class="mobile-menu-button" id="mobile-menu-button">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        <div id="mobile-menu" class="mobile-menu card-transparente hidden">
-            <a href="localizacao.html">Localização</a>
-            <a href="duvidas.html">Dúvidas</a>
-            <a href="contato.html">Contato</a>
-            <a href="sobre_nos.html">Sobre Nós</a>
-        </div>
-    </header>
-    <main>
-        <div class="espaçamento-1"></div>
+            <div class="pagina-contato">
 
-        <div class="pagina-contato">
+                <div class="alastor">
+                    <img src="../images/alastor_1.png" alt="Alastor">
+                </div>
 
-            <div class="alastor">
-                <img src="../images/alastor_1.png" alt="Alastor">
-            </div>
+                <div class="contato-container">
+                    <h1>Fale Conosco</h1>
+                    <form action="#" method="post">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
 
-            <div class="contato-container">
-                <h1>Fale Conosco</h1>
-                <form action="#" method="post">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
 
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" required>
 
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone" required>
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+                        <br>
+                        <button class="button-v2" type="submit">Enviar Mensagem</button>
+                    </form>
+                </div>
 
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
-                    <br>
-                    <button class="button-v2" type="submit">Enviar Mensagem</button>
-                </form>
+                <div class="logo2">
+                    <img src="../images/hazbin2.png" alt="Logo do Hazbin Hotel">
+                </div>
+
             </div>
 
-            <div class="logo2">
-                <img src="../images/hazbin2.png" alt="Logo do Hazbin Hotel">
-            </div>
+            <div class="espaçamento-2"></div>
+        </main>
 
-        </div>
+    </div>
 
-        <div class="espaçamento-2"></div>
-    </main>
-
-    <footer class="footer card-transparente">
+    <footer class="footer">
         <div class="footer-container">
             <p>© Project designed by Charlie Morningstar, the Princess of Hell, and directed by Alastor, the Radio
                 Demon.</p>

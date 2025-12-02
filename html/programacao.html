@@ -14,87 +14,92 @@
 </head>
 
 <body>
-    <header class="header card-transparente">
-        <div class="header-container">
-            <div class="header-links-esquerdo">
-                <a href="pagina_inicial.html">Início</a>
-                <a href="quartos.html">Quartos</a>
-                <a href="avaliacoes.html">Avaliações</a>
+
+    <div class="background">
+
+        <header class="header card-transparente">
+            <div class="header-container">
+                <div class="header-links-esquerdo">
+                    <a href="pagina_inicial.html">Início</a>
+                    <a href="quartos.html">Quartos</a>
+                    <a href="avaliacoes.html">Avaliações</a>
+                    <a href="localizacao.html">Localização</a>
+                </div>
+
+                <div class="logo">
+                    <img src="../images/hazbin.png" alt="hotel">
+                </div>
+
+                <div class="header-links-direito">
+                    <a href="contato.html">Contato</a>
+                    <a href="sobre_nos.html">Sobre Nós</a>
+                    <a href="programacao.html">Programação</a>
+                    <a href="duvidas.html">Dúvidas</a>
+                </div>
+                <button class="profile-menu-button" id="profile-menu-button">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div id="profile-menu" class="profile-menu card-transparente hidden">
+                    <a href="usuario.html">Perfil</a>
+                    <a href="configuracoes.html">Configurações</a>
+                    <a href="reservas.html">Reservas</a>
+                    <a href="logout.html" class="logout">Sair</a>
+                </div>
+
+                <button class="mobile-menu-button" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="mobile-menu card-transparente hidden">
                 <a href="localizacao.html">Localização</a>
-            </div>
-
-            <div class="logo">
-                <img src="../images/hazbin.png" alt="hotel">
-            </div>
-
-            <div class="header-links-direito">
+                <a href="duvidas.html">Dúvidas</a>
                 <a href="contato.html">Contato</a>
                 <a href="sobre_nos.html">Sobre Nós</a>
-                <a href="programacao.html">Programação</a>
-                <a href="duvidas.html">Dúvidas</a>
             </div>
-            <button class="profile-menu-button" id="profile-menu-button">
-                <i class="fas fa-user-circle"></i>
-            </button>
-            <div id="profile-menu" class="profile-menu card-transparente hidden">
-                <a href="usuario.html">Perfil</a>
-                <a href="configuracoes.html">Configurações</a>
-                <a href="reservas.html">Reservas</a>
-                <a href="logout.html" class="logout">Sair</a>
+        </header>
+        <main>
+            <div class="espaçamento-1"></div>
+            <div class="programacao-container">
+                <h1>Programação dos Próximos Dias</h1>
+
+                <div class="evento">
+                    <h2>🧩 Dinâmica de Grupo</h2>
+                    <p>Data: 21/08/25<br>
+                        Hora: 18h00<br>
+                        Local: Salão Principal<br>
+                        Uma experiência interativa para quebrar o gelo — literalmente, se necessário.</p>
+                </div>
+
+                <div class="evento">
+                    <h2>🔥 Tour pelela Cidade Pentagrama</h2>
+                    <p>Data: 22/08/25<br>
+                        Hora: 15h00<br>
+                        Ponto de Encontro: Recepção do Hotel<br>
+                        Explore os pontos turísticos mais... peculiares de nossa região. Fotos não recomendadas.</p>
+                </div>
+
+                <div class="evento">
+                    <h2>🎉 Festea de Aniversário da Niffty</h2>
+                    <p>Data: 23/08/25<br>
+                        Hora: 10h00<br>
+                        Local: Torre dos Vees<br>
+                        O Hotel nunca esteve tão limpo.</p>
+                </div>
+
+                <div class="evento">
+                    <h2>🎬 Noite de Filmes</h2>
+                    <p>Data: 24/08/25<br>
+                        Hora: 20h00<br>
+                        Local: Sala de Entretenimento<br>
+                        Pipoca, filmes clássicos e uma pitada de terror vintage.</p>
+                </div>
             </div>
+            <div class="espaçamento-2"></div>
+        </main>
 
-            <button class="mobile-menu-button" id="mobile-menu-button">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        <div id="mobile-menu" class="mobile-menu card-transparente hidden">
-            <a href="localizacao.html">Localização</a>
-            <a href="duvidas.html">Dúvidas</a>
-            <a href="contato.html">Contato</a>
-            <a href="sobre_nos.html">Sobre Nós</a>
-        </div>
-    </header>
-    <main>
-        <div class="espaçamento-1"></div>
-        <div class="programacao-container">
-            <h1>Programação dos Próximos Dias</h1>
+    </div>
 
-            <div class="evento">
-                <h2>🧩 Dinâmica de Grupo</h2>
-                <p>Data: 21/08/25<br>
-                    Hora: 18h00<br>
-                    Local: Salão Principal<br>
-                    Uma experiência interativa para quebrar o gelo — literalmente, se necessário.</p>
-            </div>
-
-            <div class="evento">
-                <h2>🔥 Tour pelela Cidade Pentagrama</h2>
-                <p>Data: 22/08/25<br>
-                    Hora: 15h00<br>
-                    Ponto de Encontro: Recepção do Hotel<br>
-                    Explore os pontos turísticos mais... peculiares de nossa região. Fotos não recomendadas.</p>
-            </div>
-
-            <div class="evento">
-                <h2>🎉 Festea de Aniversário da Niffty</h2>
-                <p>Data: 23/08/25<br>
-                    Hora: 10h00<br>
-                    Local: Torre dos Vees<br>
-                    O Hotel nunca esteve tão limpo.</p>
-            </div>
-
-            <div class="evento">
-                <h2>🎬 Noite de Filmes</h2>
-                <p>Data: 24/08/25<br>
-                    Hora: 20h00<br>
-                    Local: Sala de Entretenimento<br>
-                    Pipoca, filmes clássicos e uma pitada de terror vintage.</p>
-            </div>
-        </div>
-        <div class="espaçamento-2"></div>
-    </main>
-
-    <footer class="footer card-transparente">
+    <footer class="footer">
         <div class="footer-container">
             <p>© Project designed by Charlie Morningstar, the Princess of Hell, and directed by Alastor, the Radio
                 Demon.</p>

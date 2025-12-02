@@ -14,86 +14,93 @@
 </head>
 
 <body>
-    <header class="header card-transparente">
-        <div class="header-container">
-            <div class="header-links-esquerdo">
-                <a href="pagina_inicial.html">Início</a>
-                <a href="quartos.html">Quartos</a>
-                <a href="avaliacoes.html">Avaliações</a>
+
+    <div class="background">
+
+        <header class="header card-transparente">
+            <div class="header-container">
+                <div class="header-links-esquerdo">
+                    <a href="pagina_inicial.html">Início</a>
+                    <a href="quartos.html">Quartos</a>
+                    <a href="avaliacoes.html">Avaliações</a>
+                    <a href="localizacao.html">Localização</a>
+                </div>
+
+                <div class="logo">
+                    <img src="../images/hazbin.png" alt="hotel">
+                </div>
+
+                <div class="header-links-direito">
+                    <a href="contato.html">Contato</a>
+                    <a href="sobre_nos.html">Sobre Nós</a>
+                    <a href="programacao.html">Programação</a>
+                    <a href="duvidas.html">Dúvidas</a>
+                </div>
+                <button class="profile-menu-button" id="profile-menu-button">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div id="profile-menu" class="profile-menu card-transparente hidden">
+                    <a href="usuario.html">Perfil</a>
+                    <a href="configuracoes.html">Configurações</a>
+                    <a href="reservas.html">Reservas</a>
+                    <a href="logout.html" class="logout">Sair</a>
+                </div>
+
+                <button class="mobile-menu-button" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="mobile-menu card-transparente hidden">
                 <a href="localizacao.html">Localização</a>
-            </div>
-
-            <div class="logo">
-                <img src="../images/hazbin.png" alt="hotel">
-            </div>
-
-            <div class="header-links-direito">
+                <a href="duvidas.html">Dúvidas</a>
                 <a href="contato.html">Contato</a>
                 <a href="sobre_nos.html">Sobre Nós</a>
-                <a href="programacao.html">Programação</a>
-                <a href="duvidas.html">Dúvidas</a>
             </div>
-            <button class="profile-menu-button" id="profile-menu-button">
-                <i class="fas fa-user-circle"></i>
-            </button>
-            <div id="profile-menu" class="profile-menu card-transparente hidden">
-                <a href="usuario.html">Perfil</a>
-                <a href="configuracoes.html">Configurações</a>
-                <a href="reservas.html">Reservas</a>
-                <a href="logout.html" class="logout">Sair</a>
+        </header>
+        <main>
+            <div class="espaçamento-1"></div>
+            <div class="faq-container">
+                <h1 class="faq-title">Perguntas Frequentes</h1>
+
+                <div class="faq">
+                    <h2>🛏️ Como posso fazer uma reserva?</h2>
+                    <p>Você pode realizar sua reserva diretamente na nossa <a href="reservas.html">página de
+                            reservas</a>.
+                        Basta
+                        preencher o formulário com suas informações.</p>
+                </div>
+
+                <div class="faq">
+                    <h2>👻 O hotel é realmente assombrado?</h2>
+                    <p>Não podemos confirmar... mas digamos que alguns hóspedes nunca mais fizeram check-out. 😉</p>
+                </div>
+
+                <div class="faq">
+                    <h2>📍 Onde fica localizado o Hazbin Hotel?</h2>
+                    <p>Você pode encontrar todas as informações na nossa <a href="localizacao.html">página de
+                            localização</a>,
+                        incluindo um mapa detalhado da Cidade Pentagrama.</p>
+                </div>
+
+                <div class="faq">
+                    <h2>📞 Como entrar em contato com a equipe?</h2>
+                    <p>Você pode nos enviar uma mensagem pela nossa <a href="contato.html">página de contato</a>.
+                        Estamos
+                        sempre
+                        à disposição (quase sempre...).</p>
+                </div>
+
+                <div class="faq">
+                    <h2>🕒 O hotel funciona 24 horas?</h2>
+                    <p>Sim! Afinal, o tempo aqui é... relativo.</p>
+                </div>
             </div>
+            <div class="espaçamento-2"></div>
+        </main>
 
-            <button class="mobile-menu-button" id="mobile-menu-button">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        <div id="mobile-menu" class="mobile-menu card-transparente hidden">
-            <a href="localizacao.html">Localização</a>
-            <a href="duvidas.html">Dúvidas</a>
-            <a href="contato.html">Contato</a>
-            <a href="sobre_nos.html">Sobre Nós</a>
-        </div>
-    </header>
-    <main>
-        <div class="espaçamento-1"></div>
-        <div class="faq-container">
-            <h1 class="faq-title">Perguntas Frequentes</h1>
+    </div>
 
-            <div class="faq">
-                <h2>🛏️ Como posso fazer uma reserva?</h2>
-                <p>Você pode realizar sua reserva diretamente na nossa <a href="reservas.html">página de reservas</a>.
-                    Basta
-                    preencher o formulário com suas informações.</p>
-            </div>
-
-            <div class="faq">
-                <h2>👻 O hotel é realmente assombrado?</h2>
-                <p>Não podemos confirmar... mas digamos que alguns hóspedes nunca mais fizeram check-out. 😉</p>
-            </div>
-
-            <div class="faq">
-                <h2>📍 Onde fica localizado o Hazbin Hotel?</h2>
-                <p>Você pode encontrar todas as informações na nossa <a href="localizacao.html">página de
-                        localização</a>,
-                    incluindo um mapa detalhado da Cidade Pentagrama.</p>
-            </div>
-
-            <div class="faq">
-                <h2>📞 Como entrar em contato com a equipe?</h2>
-                <p>Você pode nos enviar uma mensagem pela nossa <a href="contato.html">página de contato</a>. Estamos
-                    sempre
-                    à disposição (quase sempre...).</p>
-            </div>
-
-            <div class="faq">
-                <h2>🕒 O hotel funciona 24 horas?</h2>
-                <p>Sim! Afinal, o tempo aqui é... relativo.</p>
-            </div>
-        </div>
-        <div class="espaçamento-2"></div>
-    </main>
-
-    <footer class="footer card-transparente">
+    <footer class="footer">
         <div class="footer-container">
             <p>© Project designed by Charlie Morningstar, the Princess of Hell, and directed by Alastor, the Radio
                 Demon.</p>

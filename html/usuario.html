@@ -15,78 +15,82 @@
 
 <body>
 
-    <header class="header card-transparente">
-        <div class="header-container">
-            <div class="header-links-esquerdo">
-                <a href="pagina_inicial.html">Início</a>
-                <a href="quartos.html">Quartos</a>
-                <a href="avaliacoes.html">Avaliações</a>
+    <div class="background">
+
+        <header class="header card-transparente">
+            <div class="header-container">
+                <div class="header-links-esquerdo">
+                    <a href="pagina_inicial.html">Início</a>
+                    <a href="quartos.html">Quartos</a>
+                    <a href="avaliacoes.html">Avaliações</a>
+                    <a href="localizacao.html">Localização</a>
+                </div>
+
+                <div class="logo">
+                    <img src="../images/hazbin.png" alt="hotel">
+                </div>
+
+                <div class="header-links-direito">
+                    <a href="contato.html">Contato</a>
+                    <a href="sobre_nos.html">Sobre Nós</a>
+                    <a href="programacao.html">Programação</a>
+                    <a href="duvidas.html">Dúvidas</a>
+                </div>
+                <button class="profile-menu-button" id="profile-menu-button">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div id="profile-menu" class="profile-menu card-transparente hidden">
+                    <a href="usuario.html">Perfil</a>
+                    <a href="configuracoes.html">Configurações</a>
+                    <a href="reservas.html">Reservas</a>
+                    <a href="logout.html" class="logout">Sair</a>
+                </div>
+
+                <button class="mobile-menu-button" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="mobile-menu card-transparente hidden">
                 <a href="localizacao.html">Localização</a>
-            </div>
-
-            <div class="logo">
-                <img src="../images/hazbin.png" alt="hotel">
-            </div>
-
-            <div class="header-links-direito">
+                <a href="duvidas.html">Dúvidas</a>
                 <a href="contato.html">Contato</a>
                 <a href="sobre_nos.html">Sobre Nós</a>
-                <a href="programacao.html">Programação</a>
-                <a href="duvidas.html">Dúvidas</a>
             </div>
-            <button class="profile-menu-button" id="profile-menu-button">
-                <i class="fas fa-user-circle"></i>
-            </button>
-            <div id="profile-menu" class="profile-menu card-transparente hidden">
-                <a href="usuario.html">Perfil</a>
-                <a href="configuracoes.html">Configurações</a>
-                <a href="reservas.html">Reservas</a>
-                <a href="logout.html" class="logout">Sair</a>
-            </div>
+        </header>
+        <main>
+            <div class="espaçamento-1"></div>
+            <div class="background"></div>
 
-            <button class="mobile-menu-button" id="mobile-menu-button">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        <div id="mobile-menu" class="mobile-menu card-transparente hidden">
-            <a href="localizacao.html">Localização</a>
-            <a href="duvidas.html">Dúvidas</a>
-            <a href="contato.html">Contato</a>
-            <a href="sobre_nos.html">Sobre Nós</a>
-        </div>
-    </header>
-    <main>
-        <div class="espaçamento-1"></div>
-        <div class="background"></div>
+            <section class="container">
+                <div class="opcoes">
+                    <i class="fas fa-user-circle"></i>
 
-        <section class="container">
-            <div class="opcoes">
-                <i class="fas fa-user-circle"></i>
+                    (campo para aparecer o nome do usuario)
 
-                (campo para aparecer o nome do usuario)
+                    <a href="configuracoes.html" class="botao">
+                        <i class="fas fa-user-cog"></i> Configurações
+                    </a>
 
-                <a href="configuracoes.html" class="botao">
-                    <i class="fas fa-user-cog"></i> Configurações
-                </a>
+                    <a href="reservas.html" class="botao">
+                        <i class="fas fa-calendar-alt"></i> Suas reservas
+                    </a>
 
-                <a href="reservas.html" class="botao">
-                    <i class="fas fa-calendar-alt"></i> Suas reservas
-                </a>
+                    <a href="comentarios.html" class="botao">
+                        <i class="fas fa-comment-dots"></i> Seus comentários
+                    </a>
 
-                <a href="comentarios.html" class="botao">
-                    <i class="fas fa-comment-dots"></i> Seus comentários
-                </a>
+                    <a href="login.html" class="logout">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </div>
+            </section>
 
-                <a href="login.html" class="logout">
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                </a>
-            </div>
-        </section>
+            <div class="espaçamento-2"></div>
+        </main>
 
-        <div class="espaçamento-2"></div>
-    </main>
+    </div>
 
-    <footer class="footer card-transparente">
+    <footer class="footer">
         <div class="footer-container">
             <p>© Project designed by Charlie Morningstar, the Princess of Hell, and directed by Alastor, the Radio
                 Demon.</p>
