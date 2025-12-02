@@ -105,7 +105,6 @@
     border: 0.125rem solid var(--p3);
 }
 
-/* Botão 100% dentro da foto com ícone central */
 .btn-foto {
     position: absolute;
     inset: 0;
@@ -114,7 +113,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0,0,0,0.45); /* overlay translúcido */
+    background: var(--t1);
     color: var(--p1);
     font-size: 1.6rem;
     transition: 0.2s ease;
@@ -249,4 +248,178 @@
     .btn-salvar {
         width: 100%;
     }
+}
+
+.input-modal,
+.modal-content input[type="password"] {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 0.6rem;
+    border: 0.125rem solid var(--p3);
+    background-color: var(--p1);
+    color: var(--p2);
+    font-size: 1rem;
+}
+
+.telefones-container {
+    margin-top: 2rem;
+    padding: 1.2rem;
+    border: 0.125rem solid var(--p3);
+    border-radius: 1rem;
+    background-color: var(--t1);
+    box-shadow: 0 0 1rem var(--t3);
+}
+
+.telefones-container h2 {
+    color: var(--p3);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* lista de telefones */
+#lista-telefones {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.2rem;
+}
+
+#lista-telefones li {
+    background-color: var(--p1);
+    border: 0.125rem solid var(--p3);
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 0.8rem;
+    color: var(--p2);
+    font-size: 1.05rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Espaçamento entre o texto e os botões */
+#lista-telefones li button {
+    margin-left: 0.5rem;
+}
+
+/* botão “+ adicionar telefone” */
+#btn-add-telefone {
+    width: 100%;
+    background-color: var(--p4);
+    font-size: 1.1rem;
+    padding: 0.9rem;
+    border-radius: 0.8rem;
+    transition: 0.2s ease;
+}
+#btn-add-telefone:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 0.8rem var(--p4);
+}
+
+/* botões editar/excluir na lista */
+.btn-tel {
+    background-color: var(--p3);
+    color: var(--p2);
+    border-radius: 0.5rem;
+    padding: 0.4rem 0.7rem;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.btn-tel:hover {
+    background-color: var(--p4);
+}
+
+.btn-tel-del {
+    background-color: var(--p5);
+    color: var(--p1);
+}
+.btn-tel-del:hover {
+    background-color: var(--p6);
+    box-shadow: 0 0 0.7rem var(--p5);
+}
+
+#modal-telefone,
+#modal-excluir-telefone {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.72);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+#modal-telefone .modal-content,
+#modal-excluir-telefone .modal-content {
+    width: 90%;
+    max-width: 24rem;
+    padding: 2rem;
+    background-color: var(--t1);
+    border-radius: 1.2rem;
+    box-shadow: 0 0 1.8rem var(--t3);
+    border: 0.125rem solid var(--p3);
+    text-align: center;
+    animation: aparecer 0.25s ease;
+}
+
+/* animação */
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* input do número */
+#telefone-input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 0.7rem;
+    border: 0.125rem solid var(--p3);
+    background-color: var(--p1);
+    color: var(--p2);
+    font-size: 1.05rem;
+    margin-top: 1rem;
+}
+
+/* títulos dos modais */
+#modal-telefone h2,
+#modal-excluir-telefone h2 {
+    color: var(--p3);
+    margin-bottom: 1rem;
+}
+
+/* área dos botões dentro do modal */
+#modal-telefone .modal-botoes,
+#modal-excluir-telefone .modal-botoes {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+/* Botões dentro do modal */
+#modal-telefone .btn-confirmar,
+#modal-excluir-telefone .btn-confirmar {
+    background-color: var(--p5);
+    color: var(--p1);
+    border: none;
+    padding: 0.8rem 1.3rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#modal-telefone .btn-cancelar,
+#modal-excluir-telefone .btn-cancelar {
+    background-color: var(--p3);
+    color: var(--p2);
+    padding: 0.8rem 1.3rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#modal-telefone .btn-confirmar:hover,
+#modal-excluir-telefone .btn-confirmar:hover {
+    background-color: #a00000;
 }

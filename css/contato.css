@@ -1,9 +1,9 @@
 /* ===== Container Principal ===== */
 .contato-container {
     background-color: var(--t1);
-    max-width: 45rem;
-    margin: 6rem auto;
-    padding: 3rem;
+    max-width: 60rem !important;
+    width: 60rem !important;
+    padding: 4rem;
     border-radius: 1rem;
     box-shadow: 0 0 2rem var(--t3);
     color: var(--p2);
@@ -13,7 +13,11 @@
     box-sizing: border-box;
     position: relative;
     z-index: 1;
+
+    /* REMOVIDO: margin-top grande e o auto centralizado */
+    margin: 0;
 }
+
 
 /* ===== Título ===== */
 .contato-container h1 {
@@ -82,11 +86,13 @@ textarea:focus {
 /* ===== Imagem Alastor ===== */
 .alastor {
     display: flex;
-    justify-content: flex-start;
-    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* antes: 15rem */
 }
 
 .alastor img {
+    margin-top: 7rem;
     max-width: 20rem;
     height: auto;
     filter: drop-shadow(0 0 1rem var(--t3));
@@ -100,11 +106,13 @@ textarea:focus {
 /* ===== Logo 2 ===== */
 .logo2 {
     display: flex;
-    justify-content: flex-end;
-    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* antes: margin-top: 2rem */
 }
 
 .logo2 img {
+    margin-top: 16rem;
     max-width: 25rem;
     height: auto;
     filter: drop-shadow(0 0 1rem var(--t3));
@@ -115,42 +123,79 @@ textarea:focus {
     transform: scale(1.05);
 }
 
-@media (max-width: 1025px) {
-    .alastor img,
-    .logo2 img {
-        max-width: 18rem;
-    }
+/* ======== Layout principal do contato (lado a lado) ======== */
+.pagina-contato {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;            /* espaço entre as colunas */
+    margin-top: 6rem;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 4rem; /* ajuste como quiser */
 }
 
-@media (max-width: 1024px) {
+.pagina-contato > * {
+    flex-shrink: 0;   /* impede de diminuir */
+    flex-grow: 0;     /* impede de expandir automaticamente */
+}
+
+.alastor,
+.logo2 {
+    width: fit-content;
+}
+
+/* ===== MOBILE (até 1024px) ===== */
+@media (max-width: 1814px) {
+
+    /* some as imagens */
     .alastor,
     .logo2 {
         display: none;
     }
+
+    /* centraliza o container */
+    .pagina-contato {
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+        gap: 0;
+    }
+
+    .contato-container {
+        width: 90% !important;
+        max-width: 40rem !important;
+        padding: 2.5rem;
+        margin: 0 auto;
+    }
 }
 
-@media (max-width: 768px) {
+/* ===== CELULARES (até 600px) ===== */
+@media (max-width: 600px) {
+
     .contato-container {
-        margin: 4rem 1.5rem;
+        width: 95% !important;
+        max-width: 32rem !important;
         padding: 2rem;
     }
 
     .contato-container h1 {
-        font-size: 1.75rem;
+        font-size: 1.8rem;
     }
 
     label {
         font-size: 1rem;
     }
 
+    input,
+    textarea {
+        font-size: 0.95rem;
+        padding: 0.65rem 0.9rem;
+    }
+
     .button-v2 {
         font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .contato-container {
-        margin: 3rem 1rem;
-        padding: 1.5rem;
+        padding: 0.65rem;
     }
 }

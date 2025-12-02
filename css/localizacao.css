@@ -1,39 +1,75 @@
-.mapa {
+.mapa { 
     display: flex;
-    justify-content: right;
-    align-items: right;
-    margin-top: -400px;
-    margin-right: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5rem;
+    margin-right: 0;
 }
 
 .mapa img {
-    width: 1000px;
+    width: 87.5rem;
+    max-width: 90vw;
     height: auto;
-    box-shadow: 0 0 15px rgba(240, 32, 118, 0.5);
+    box-shadow: 0 0 15px var(--t4);
     border-radius: 10px;
 }
 
-.local{
-    color: white;
+.local {
+    color: var(--p3);
+    text-shadow: var(--p3) 0px 0px 10px;
     text-align: center;
-    font-size: 80px;
-    margin-top: 90px;
+    font-size: 2.5rem;
     font-family: 'Mr Darcy W01 Regular';
-    width: 30%;
-    margin: 90px auto 0;
-    text-shadow: rgb(240, 32, 118) 2px 2px 4px,
-                 rgb(240, 32, 118) -2px -2px 4px,
-                 rgb(240, 32, 118) 2px -2px 4px,
-                 rgb(240, 32, 118) -2px 2px 4px;
-                 max-width: 1200px;
-    margin: 0;
-    padding: 50px 30px;
-    background: rgba(0, 0, 0, 0.7);
+    width: 60%;
+    margin: 2.5rem auto 0;
+    padding: 3.125rem 1.875rem;
+    background: var(--t1);
     border-radius: 15px;
-    border: 2px solid rgb(240, 32, 118);
-    box-shadow: 0 0 20px rgba(240, 32, 118, 0.6);
-    font-size: 20px;
+    border: 2px solid var(--p3);
+    box-shadow: 0 0 20px var(--t3);
     line-height: 1.5;
-    margin-left: 130px;
-    margin-top: 120px;
+}
+
+@media (max-width: 1024px) {
+
+    .mapa img {
+        width: 100%;
+        max-width: 900px;
+    }
+
+    .local {
+        width: 80%;
+        font-size: 1.75rem;
+        margin-top: 1.875rem;
+        padding: 2.5rem 1.5625rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .mapa img {
+        width: 95%;
+        max-width: 600px;
+    }
+
+    .local {
+        width: 90%;
+        font-size: 1.375rem;
+        padding: 1.875rem 1.25rem;
+        margin-top: 1.5625rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .mapa img {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .local {
+        width: 90%;
+        font-size: 0.85rem;
+        padding: 1.5625rem 1.125rem;
+    }
 }

@@ -1,28 +1,28 @@
 .programacao-container {
     max-width: 1000px;
-    margin: 50px auto;
-    padding: 40px;
-    background: rgba(0, 0, 0, 0.75);
-    border: 2px solid rgb(240, 32, 118);
+    margin: 3.125rem auto;
+    padding: 2.5rem;
+    background: var(--t1);
+    border: 2px solid var(--p3);
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(240, 32, 118, 0.6);
+    box-shadow: 0 0 20px var(--t3);
     font-family: 'Mr Darcy W01 Regular';
-    color: white;
+    color: var(--p2);
 }
 
 .programacao-container h1 {
-    color: white;
-    font-size: 48px;
+    color: var(--p2);
+    font-size: 3rem;
     text-align: center;
-    text-shadow: rgb(240, 32, 118) 2px 2px 4px;
-    margin-bottom: 40px;
+    text-shadow: var(--p3) 2px 2px 4px;
+    margin-bottom: 2.5rem;
 }
 
 .evento {
-    margin-bottom: 40px;
-    padding: 20px;
-    border-left: 5px solid rgb(240, 32, 118);
-    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 2.5rem;
+    padding: 1.25rem;
+    border-left: 5px solid var(--p3);
+    background: var(--t2);
     transition: transform 0.3s ease;
 }
 
@@ -31,13 +31,33 @@
 }
 
 .evento h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-    text-shadow: rgb(240, 32, 118) 1px 1px 3px;
+    font-size: 2rem;
+    margin-bottom: 0.625rem;
+    text-shadow: var(--p3) 1px 1px 3px;
 }
 
 .evento p {
-    color: white;
-    font-size: 20px;
+    color: var(--p2);
+    font-size: 1.25rem;
     line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .programacao-container h1 { font-size: 2.4rem; }
+    .evento h2 { font-size: 1.7rem; }
+    .evento p { font-size: 1.125rem; }
+}
+
+@media (max-width: 768px) {
+    .programacao-container { padding: 2rem; }
+    .programacao-container h1 { font-size: 2rem; }
+    .evento h2 { font-size: 1.5rem; }
+    .evento p { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .programacao-container { padding: 1.5rem; }
+    .programacao-container h1 { font-size: 1.7rem; }
+    .evento h2 { font-size: 1.25rem; }
+    .evento p { font-size: 0.9375rem; }
 }

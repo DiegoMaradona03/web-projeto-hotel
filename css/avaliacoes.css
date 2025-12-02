@@ -1,22 +1,65 @@
+/* CONTAINER PRINCIPAL */
 .avaliacoes-container {
     background-color: var(--t1);
     border: 2px solid var(--p3);
     box-shadow: 0 0 20px var(--t3);
     padding: 40px;
     border-radius: 15px;
-    max-width: 900px;
-    width: 100%;
+    width: 100%; /* Mantido conforme pedido */
+    max-width: 900px; /* Só é aplicado em telas grandes */
     font-family: 'Mr Darcy W01 Regular', Arial, sans-serif;
     color: var(--p2);
     text-align: center;
-    height: 1400px;
+    height: auto; /* Altura sempre responsiva */
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
+/* Telas abaixo de 1100px */
+@media (max-width: 1100px) {
+    .avaliacoes-container {
+        width: 100%;
+        padding: 30px;
+    }
+}
+
+/* Telas até 800px */
+@media (max-width: 800px) {
+    .avaliacoes-container {
+        width: 100%;
+        padding: 25px;
+        border-radius: 12px;
+    }
+}
+
+/* Telas até 500px */
+@media (max-width: 500px) {
+    .avaliacoes-container {
+        width: 100%;
+        padding: 18px;
+        border-radius: 10px;
+    }
+}
+
+/* Telas ultra estreitas */
+@media (max-width: 360px) {
+    .avaliacoes-container {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+/* Garantir que nada ultrapasse a largura */
+* {
+    box-sizing: border-box;
+}
+
+/* AVALIAÇÕES */
 .avaliacao {
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--t4);
+    width: 100%;
 }
 
 .avaliacao:last-child {
@@ -24,24 +67,28 @@
 }
 
 .avaliacao h3 {
-    font-size: 24px;
+    font-size: 1.5rem; /* Responsivo */
     margin-bottom: 10px;
     color: var(--p3);
 }
 
 .avaliacao p {
-    font-size: 18px;
+    width: 100%;
+    font-size: 1.125rem; /* 18px responsivo */
     line-height: 1.6;
     margin: 0 auto;
-    max-width: 700px;
+    max-width: 100%; /* Impede estourar */
 }
 
+/* Cabeçalho da avaliação */
 .avaliacao-header {
     display: flex;
+    flex-wrap: wrap; /* 🔥 EVITA ESTOURAR */
     align-items: center;
     gap: 15px;
     margin-bottom: 10px;
     text-align: left;
+    width: 100%;
 }
 
 .perfil-img {
@@ -52,18 +99,21 @@
     border: 2px solid var(--p3);
 }
 
+/* Botões (curtir/responder) */
 .avaliacao-actions {
     display: flex;
+    flex-wrap: wrap; /* 🔥 EVITA ESTOURAR */
     gap: 15px;
     margin-top: 10px;
     justify-content: flex-start;
+    width: 100%;
 }
 
 .avaliacao-actions button {
     background-color: transparent;
     border: none;
     color: var(--p3);
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     transition: transform 0.2s, color 0.3s;
     display: flex;
@@ -72,7 +122,7 @@
 }
 
 .avaliacao-actions button span {
-    font-size: 14px;
+    font-size: 0.875rem;
     color: var(--p2);
 }
 
@@ -81,14 +131,16 @@
     color: var(--p2);
 }
 
+/* COMENTÁRIOS */
 .comentario-container {
     margin-top: 30px;
     text-align: left;
+    width: 100%;
 }
 
 .comentario-container h3 {
     color: var(--p3);
-    font-size: 22px;
+    font-size: 1.375rem;
     margin-bottom: 10px;
 }
 
@@ -99,13 +151,13 @@
     border: 2px solid var(--p3);
     background-color: var(--t2);
     color: var(--p2);
-    font-size: 16px;
+    font-size: 1rem;
     resize: none;
     font-family: Arial, sans-serif;
 }
 
 .comentario-container textarea::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--t4);
 }
 
 .enviar-comentario {
@@ -114,7 +166,7 @@
     border: 2px solid var(--p3);
     color: var(--p3);
     padding: 8px 16px;
-    font-size: 16px;
+    font-size: 1rem;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -123,4 +175,19 @@
 .enviar-comentario:hover {
     background-color: var(--p3);
     color: var(--p2);
+}
+
+/* 🔥 Responsividade de fontes */
+@media (max-width: 700px) {
+    .avaliacao h3 { font-size: 1.25rem; }
+    .avaliacao p { font-size: 1rem; }
+    .comentario-container h3 { font-size: 1.25rem; }
+}
+
+@media (max-width: 500px) {
+    .avaliacao h3 { font-size: 1.125rem; }
+    .avaliacao p { font-size: 0.9375rem; line-height: 1.4; }
+    .avaliacao-actions button { font-size: 0.875rem; }
+    .avaliacao-actions button span { font-size: 0.75rem; }
+    .comentario-container textarea { height: 120px; }
 }

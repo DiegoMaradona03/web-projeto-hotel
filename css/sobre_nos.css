@@ -1,8 +1,8 @@
 .container-staff {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--t1);
     border-radius: 15px;
-    box-shadow: 1px 4px 4px 4px rgb(240, 32, 118);
-    color: white;
+    box-shadow: 1px 4px 4px 4px var(--p3);
+    color: var(--p2);
     padding: 40px;
     margin: 50px auto;
     max-width: 1500px;
@@ -13,11 +13,11 @@
 
 .equipe {
     font-size: 50px;
-    color: white;
-    text-shadow: rgb(240, 32, 118) 2px 2px 4px,
-                 rgb(240, 32, 118) -2px -2px 4px,
-                 rgb(240, 32, 118) 2px -2px 4px,
-                 rgb(240, 32, 118) -2px 2px 4px;
+    color: var(--p2);
+    text-shadow: var(--p3) 2px 2px 4px,
+                 var(--p3) -2px -2px 4px,
+                 var(--p3) 2px -2px 4px,
+                 var(--p3) -2px 2px 4px;
     margin-top: 30px;
     margin-bottom: 15px;
     text-align: center;
@@ -43,8 +43,8 @@
     height: 150px;
     object-fit: cover;
     border-radius: 15px;
-    border: 2px solid rgb(240, 32, 118);
-    box-shadow: 0 0 15px rgba(240, 32, 118, 0.5);
+    border: 2px solid var(--p3);
+    box-shadow: 0 0 15px var(--t4);
     transition: transform 0.3s ease;
 }
 
@@ -53,11 +53,11 @@
 }
 
 .staff-card p {
-    color: white;
+    color: var(--p2);
     margin-top: 10px;
     font-family: 'Mr Darcy W01 Regular';
     font-size: 20px;
-    text-shadow: 1px 1px 2px rgb(240, 32, 118);
+    text-shadow: 1px 1px 2px var(--p3);
 }
 
 .lucifer-card {
@@ -70,8 +70,8 @@
 .lucifer-card img {
     width: 100%;
     border-radius: 20px;
-    border: 3px solid rgb(240, 32, 118);
-    box-shadow: 0 0 20px rgba(240, 32, 118, 0.7);
+    border: 3px solid var(--p3);
+    box-shadow: 0 0 20px var(--t3);
     transition: transform 0.3s ease;
     cursor: pointer;
 }
@@ -84,15 +84,15 @@
     margin-top: 15px;
     font-family: 'Mr Darcy W01 Regular';
     font-size: 25px;
-    text-shadow: 1px 1px 3px rgb(240, 32, 118);
-    color: white;
+    text-shadow: 1px 1px 3px var(--p3);
+    color: var(--p2);
 }
 
 .sobre_nos {
-    background-color: rgb(0, 0, 0, 0.7);
+    background-color: var(--t1);
     border-radius: 15px;
-    box-shadow: 1px 4px 4px 4px rgb(240, 32, 118);
-    color: white;
+    box-shadow: 1px 4px 4px 4px var(--p3);
+    color: var(--p2);
     padding: 40px;
     margin: 50px auto;
     max-width: 1500px;
@@ -103,11 +103,11 @@
 
 .sobre_nos h1 {
     font-size: 50px;
-    color: black;
-    text-shadow: rgb(240, 32, 118) 2px 2px 4px,
-                 rgb(240, 32, 118) -2px -2px 4px,
-                 rgb(240, 32, 118) 2px -2px 4px,
-                 rgb(240, 32, 118) -2px 2px 4px;
+    color: var(--p4);
+    text-shadow: var(--p3) 2px 2px 4px,
+                 var(--p3) -2px -2px 4px,
+                 var(--p3) 2px -2px 4px,
+                 var(--p3) -2px 2px 4px;
     margin-top: 30px;
     margin-bottom: 15px;
     align-items: center;
@@ -116,8 +116,8 @@
 
 .sobre_nos h2 {
     font-size: 30px;
-    color: white;
-    text-shadow: 1px 1px 2px rgb(240, 32, 118);
+    color: var(--p2);
+    text-shadow: 1px 1px 2px var(--p3);
     font-weight: normal;
 }
 
@@ -147,31 +147,31 @@
     height: 500px;
     object-fit: contain;
     border-radius: 10px;
-    border: 2px solid rgb(240, 32, 118);
-    box-shadow: 0 0 15px rgba(240, 32, 118, 0.4);
+    border: 2px solid var(--p3);
+    box-shadow: 0 0 15px var(--t4);
 }
 
 .evolucao-item {
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: var(--t1);
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(240, 32, 118, 0.5);
+    box-shadow: 0 0 10px var(--t4);
 }
 
 .evolucao-item p {
-    color: white;
+    color: var(--p2);
     font-family: 'Mr Darcy W01 Regular';
     font-size: 20px;
     margin-top: 10px;
-    text-shadow: 1px 1px 2px rgb(240, 32, 118);
+    text-shadow: 1px 1px 2px var(--p3);
 }
 
 .container-devs {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--t1);
     border-radius: 15px;
-    box-shadow: 1px 4px 4px 4px rgb(240, 32, 118);
-    color: white;
+    box-shadow: 1px 4px 4px 4px var(--p3);
+    color: var(--p2);
     padding: 40px;
     margin: 50px auto;
     max-width: 1500px;
@@ -182,11 +182,11 @@
 
 .devs-titulo {
     font-size: 45px;
-    color: white;
-    text-shadow: rgb(240, 32, 118) 2px 2px 4px,
-                 rgb(240, 32, 118) -2px -2px 4px,
-                 rgb(240, 32, 118) 2px -2px 4px,
-                 rgb(240, 32, 118) -2px 2px 4px;
+    color: var(--p2);
+    text-shadow: var(--p3) 2px 2px 4px,
+                 var(--p3) -2px -2px 4px,
+                 var(--p3) 2px -2px 4px,
+                 var(--p3) -2px 2px 4px;
     margin-bottom: 30px;
 }
 
@@ -208,8 +208,8 @@
     height: 180px;
     object-fit: cover;
     border-radius: 15px;
-    border: 2px solid rgb(240, 32, 118);
-    box-shadow: 0 0 15px rgba(240, 32, 118, 0.5);
+    border: 2px solid var(--p3);
+    box-shadow: 0 0 15px var(--t4);
     transition: transform 0.3s ease;
 }
 
@@ -218,9 +218,191 @@
 }
 
 .dev-card p {
-    color: white;
+    color: var(--p2);
     margin-top: 10px;
     font-family: 'Mr Darcy W01 Regular';
     font-size: 23px;
-    text-shadow: 1px 1px 2px rgb(240, 32, 118);
+    text-shadow: 1px 1px 2px var(--p3);
+}
+
+/* ============================================
+   📱 TABLETS (≤ 1024px)
+============================================ */
+@media (max-width: 1024px) {
+
+    .container-staff {
+        height: auto;
+        padding: 30px;
+        max-width: 95%;
+    }
+
+    .staff-grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    .lucifer-card {
+        margin: 40px auto 0 auto;
+        max-width: 400px;
+    }
+
+    .lucifer-card img {
+        width: 100%;
+    }
+
+    .equipe {
+        font-size: 40px;
+    }
+
+    .sobre_nos {
+        max-width: 95%;
+        padding: 30px;
+        margin: 30px auto;
+    }
+
+    .sobre_nos h1 {
+        font-size: 40px;
+    }
+
+    .sobre_nos h2 {
+        font-size: 26px;
+    }
+
+    .local,
+    .porque,
+    .proposito {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .evolucao-grid img {
+        height: 400px;
+    }
+
+    .devs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dev-card img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .devs-titulo {
+        font-size: 38px;
+    }
+}
+
+
+/* ============================================
+   📱 CELULARES (≤ 768px)
+============================================ */
+@media (max-width: 768px) {
+
+    .container-staff {
+        padding: 25px;
+    }
+
+    .staff-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .staff-card img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .lucifer-card {
+        margin-top: 30px;
+        max-width: 300px;
+    }
+
+    .lucifer-card p {
+        font-size: 20px;
+    }
+
+    .equipe {
+        font-size: 32px;
+    }
+
+    .sobre_nos h1 {
+        font-size: 32px;
+    }
+
+    .sobre_nos h2 {
+        font-size: 22px;
+    }
+
+    .evolucao-grid img {
+        height: 300px;
+    }
+
+    .devs-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .dev-card img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .dev-card p {
+        font-size: 20px;
+    }
+
+    .devs-titulo {
+        font-size: 30px;
+    }
+}
+
+
+/* ============================================
+   📱 CELULARES PEQUENOS (≤ 480px)
+============================================ */
+@media (max-width: 480px) {
+
+    .container-staff {
+        padding: 20px;
+    }
+
+    .staff-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .equipe {
+        font-size: 26px;
+    }
+
+    .sobre_nos {
+        padding: 20px;
+    }
+
+    .sobre_nos h1 {
+        font-size: 26px;
+    }
+
+    .sobre_nos h2 {
+        font-size: 20px;
+    }
+
+    .evolucao-grid img {
+        height: 230px;
+    }
+
+    .dev-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .dev-card p {
+        font-size: 18px;
+    }
+
+    .devs-titulo {
+        font-size: 26px;
+    }
 }
