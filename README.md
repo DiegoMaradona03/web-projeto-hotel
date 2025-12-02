@@ -84,42 +84,26 @@ Antes de iniciar os testes, certifique-se de:
 
 ---
 
-## 💳 5. Testes de Pagamento (se implementado)
+## ⚙️ 5. Casos Extremos / Testes de Borda
 
-5.1 — Ir à tela de pagamento após reserva  
-👉 Resultado Esperado: Formulário de pagamento é exibido  [ ]
-
-5.2 — Inserir dados válidos do cartão  
-👉 Resultado Esperado: Pagamento é aceito e confirmado  [ ]
-
-5.3 — Inserir dados inválidos (cartão incorreto, CVV errado)  
-👉 Resultado Esperado: Mensagem de erro correspondente  [ ]
-
-5.4 — Clicar em “Cancelar” ou “Voltar”  
-👉 Resultado Esperado: Retorna à reserva sem perder dados  [ ]
-
----
-
-## ⚙️ 6. Casos Extremos / Testes de Borda
-
-6.1 — Reservar número excessivo de quartos (ex: 100)  
+5.1 — Reservar número excessivo de quartos (ex: 100)  
 👉 Resultado Esperado: Mensagem de limite exibida  [ ]
 
-6.2 — Inserir caracteres especiais em campos de texto  
+5.2 — Inserir caracteres especiais em campos de texto  
 👉 Resultado Esperado: Sistema ignora ou trata corretamente  [ ]
 
-6.3 — Simular conexão lenta  
+5.3 — Simular conexão lenta  
 👉 Resultado Esperado: Indicadores de carregamento visíveis  [ ]
 
-6.4 — Recarregar página durante uma reserva  
+5.4 — Recarregar página durante uma reserva  
 👉 Resultado Esperado: Estado da reserva é tratado corretamente  [ ]
 
-6.5 — Simular backend fora do ar  
+5.5 — Simular backend fora do ar  
 👉 Resultado Esperado: Mensagem de erro adequada no front  [ ]
 
 ---
 
-## 🧹 7. Pós-Teste / Encerramento
+## 🧹 6. Pós-Teste / Encerramento
 
 - [ ] Conferir logs no backend para verificar requisições  
 - [ ] Apagar dados fictícios inseridos (reservas ou contatos)  
@@ -129,7 +113,7 @@ Antes de iniciar os testes, certifique-se de:
 
 ---
 
-## ✅ 8. Checklist Geral do Front-End
+## ✅ 7. Checklist Geral do Front-End
 
 🧭 Navegação fluida entre páginas  [ ]
 
@@ -154,7 +138,7 @@ Antes de iniciar os testes, certifique-se de:
 
 ---
 
-## 🧾 9. Sugestão de Ordem de Execução
+## 🧾 8. Sugestão de Ordem de Execução
 
 1. Preparar ambiente (pré-condições)  
 2. Testar navegação e layout  
