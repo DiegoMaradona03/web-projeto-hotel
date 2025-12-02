@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const rootStyles = getComputedStyle(document.documentElement);
-    const themeColor = rootStyles.getPropertyValue("--p4").trim(); // volta para t1 depois do teste
+    const root = getComputedStyle(document.documentElement);
+    const themeColor = root.getPropertyValue("--p4").trim(); // usa exatamente a cor que você quer
 
     let metaTheme = document.querySelector('meta[name="theme-color"]');
-    metaTheme.setAttribute("content", themeColor);
+    if (!metaTheme) {
+        metaTheme = document.createElement("meta");
+        metaTheme.setAttribute("name", "theme-color");
+        document.head.appendChild(metaTheme);
+    }
 
-    let appleStatus = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
-    appleStatus.setAttribute("content", "black-translucent"); // iOS vai tentar acompanhar
+    metaTheme.setAttribute("content", themeColor);
 });
