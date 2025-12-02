@@ -703,6 +703,11 @@ body {
     }
 }
 
+footer {
+    background-color: var(--p4);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
 .card-transparente {
     background: var(--t1);
     backdrop-filter: blur(10px);
