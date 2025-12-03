@@ -11,12 +11,17 @@ form.addEventListener('submit', async (e) => {
         email: form.email.value,
         cpf: form.cpf.value,
         senha: form.senha.value,
-        telefone: {
-            create: [
-                { numero: form.telefone.value }
-            ]
-        }
     };
+
+    const telefoneValor = form.telefone.value.trim();
+
+    if (telefoneValor !== "") {
+        dados.telefone = {
+            create: [
+                { numero: telefoneValor }
+            ]
+        };
+    }
 
     try {
         const resp = await axios.post(URL_API, dados);
