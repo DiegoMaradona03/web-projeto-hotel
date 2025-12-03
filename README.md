@@ -64,7 +64,7 @@ Antes de iniciar os testes, certifique-se de:
 
 ## 💬 4. Testes de Avaliações e Contato
 
-4.1 — Acessar seção de Avaliações  
+4.1 — Acessar seção de Avaliações
 👉 Resultado Esperado: Campo de nota e comentário aparece  [ ]
 
 4.2 — Enviar avaliação válida  
@@ -127,8 +127,6 @@ Antes de iniciar os testes, certifique-se de:
 
 📞 Formulário de contato envia mensagens  [ ]
 
-💰 Pagamento online funciona corretamente  [ ]
-
 ⚠️ Mensagens de erro claras e amigáveis  [ ]
 
 🔄 Página se comporta bem ao recarregar  
@@ -161,6 +159,6 @@ Caso de Teste | Resultado Esperado | Resultado Obtido | Status | Observações
 
 ---
 
-📅 **Última atualização:** Outubro de 2025  
+📅 **Última atualização:** Dezembro de 2025  
 👨‍💻 **Autor:** Arthur Souza  
 📦 **Repositório:** [github.com/ArthurS0/Projeto-Hotel](https://github.com/ArthurS0/Projeto-Hotel)
