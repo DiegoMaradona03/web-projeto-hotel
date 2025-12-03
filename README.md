@@ -129,8 +129,7 @@ Antes de iniciar os testes, certifique-se de:
 
 ⚠️ Mensagens de erro claras e amigáveis  [ ]
 
-🔄 Página se comporta bem ao recarregar  
-[ ]
+🔄 Página se comporta bem ao recarregar  [ ]
 
 🧩 Nenhum elemento “quebrado” no layout  [ ]
 
