@@ -28,7 +28,7 @@ const modalExcluirTel = document.getElementById("modal-excluir-telefone");
 const btnConfirmDelTel = document.getElementById("confirmar-excluir-telefone");
 
 const config = {
-  headers: { Authorization: `Bearer ${usuario.token}` }
+    headers: { Authorization: `Bearer ${usuario.token}` }
 };
 
 async function carregarDados() {
@@ -41,7 +41,13 @@ async function carregarDados() {
         cpf.value = data.cpf;
         senha.value = "";
 
-        if (data.fotoUrl) previewFoto.src = data.fotoUrl;
+        if (data.fotoUrl) {
+            previewFoto.classList.remove("default");
+            previewFoto.innerHTML = `<img src="${data.fotoUrl}" alt="Foto do perfil">`;
+        } else {
+            previewFoto.classList.add("default");
+            previewFoto.innerHTML = `<i class="fas fa-user"></i>`;
+        }
 
         listarTelefones(data.telefone);
 
@@ -128,7 +134,15 @@ function fecharModais() {
 
 // === FOTO ===
 fotoInput.onchange = e => {
-    previewFoto.src = URL.createObjectURL(e.target.files[0]);
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const url = URL.createObjectURL(file);
+
+    const preview = document.getElementById("preview-foto");
+
+    preview.classList.remove("default");
+    preview.innerHTML = `<img src="${url}" alt="Foto de perfil">`;
 };
 
 // === EDITAR CONTA ===

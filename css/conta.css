@@ -423,3 +423,24 @@
 #modal-excluir-telefone .btn-confirmar:hover {
     background-color: #a00000;
 }
+
+
+.foto-preview {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 0.125rem solid var(--p3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-size: 4rem;
+    color: var(--p3);
+    background-color: var(--p1);
+}
+
+.foto-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
