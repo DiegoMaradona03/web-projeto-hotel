@@ -169,7 +169,7 @@ document.getElementById("cancelar-excluir").onclick = () => modal.classList.add(
 document.getElementById("confirmar-excluir").onclick = async () => {
     await axios.delete(`${API_URL}/usuarios/${usuario.id}`, config);
     localStorage.clear();
-    window.location.href = "../login.html";
+    window.location.href = "login.html";
 };
 
 carregarDados();
