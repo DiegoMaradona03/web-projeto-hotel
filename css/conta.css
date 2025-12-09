@@ -350,3 +350,74 @@
     color: var(--p2);
     border: none;
 }
+
+/* Modal do crop */
+#modal-crop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+#modal-crop.hidden {
+  display: none;
+}
+
+/* Caixa branca */
+.crop-container {
+  background: #111;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  width: 320px;
+}
+
+/* Área do recorte */
+.crop-area {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+/* Imagem movível */
+#crop-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  cursor: grab;
+  user-select: none;
+  max-width: none;
+}
+
+/* Máscara estilo Discord */
+.crop-mask {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  pointer-events: none;
+}
+
+.crop-mask::after {
+  content: '';
+  position: absolute;
+  inset: 15%;
+  border-radius: 50%;
+  box-shadow: 0 0 0 9999px rgba(0,0,0,0.65);
+}
+
+/* Controles */
+.crop-controls {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+#zoom-range {
+  width: 100%;
+}

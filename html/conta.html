@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Hazbin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/cropperjs/dist/cropper.min.css" rel="stylesheet" />
     <link id="temadapag" rel="stylesheet" href="../css/colors.css/cor1.css">
     <link rel="stylesheet" href="../css/base.css/style.css">
     <link rel="stylesheet" href="../css/conta.css">
@@ -155,6 +156,29 @@
                     </div>
                 </div>
             </div>
+
+            <input type="file" id="foto-input" accept="image/*">
+
+            <div id="modal-crop" class="hidden">
+                <div class="crop-container">
+
+                    <div class="crop-area">
+                        <img id="crop-image">
+                        <div class="crop-mask"></div>
+                    </div>
+
+                    <div class="crop-controls">
+                        <input type="range" id="zoom-range" min="1" max="3" step="0.01" value="1">
+
+                        <div class="crop-buttons">
+                            <button type="button" id="cancelar-crop" class="btn-cancelar">Cancelar</button>
+                            <button type="button" id="confirmar-crop" class="btn-confirmar">Confirmar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
 
             <div class="espaçamento-2"></div>
         </main>

@@ -186,4 +186,101 @@ document.getElementById("confirmar-excluir").onclick = async () => {
     window.location.href = "login.html";
 };
 
+let scale = 1;
+let posX = 0;
+let posY = 0;
+let dragging = false;
+let startX, startY;
+
+const modalCrop = document.getElementById("modal-crop");
+const cropImage = document.getElementById("crop-image");
+const zoomRange = document.getElementById("zoom-range");
+
+fotoInput.addEventListener("change", (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = () => {
+    cropImage.src = reader.result;
+    modalCrop.classList.remove("hidden");
+    scale = 1;
+    posX = 0;
+    posY = 0;
+    updateTransform();
+  };
+  reader.readAsDataURL(file);
+});
+
+/* Drag da imagem */
+cropImage.addEventListener("mousedown", (e) => {
+  dragging = true;
+  cropImage.style.cursor = "grabbing";
+  startX = e.clientX - posX;
+  startY = e.clientY - posY;
+});
+
+window.addEventListener("mousemove", (e) => {
+  if (!dragging) return;
+  posX = e.clientX - startX;
+  posY = e.clientY - startY;
+  updateTransform();
+});
+
+window.addEventListener("mouseup", () => {
+  dragging = false;
+  cropImage.style.cursor = "grab";
+});
+
+/* Zoom */
+zoomRange.addEventListener("input", () => {
+  scale = zoomRange.value;
+  updateTransform();
+});
+
+function updateTransform() {
+  cropImage.style.transform = `
+    translate(-50%, -50%)
+    translate(${posX}px, ${posY}px)
+    scale(${scale})
+  `;
+}
+
+/* Cancelar */
+document.getElementById("cancelar-crop").onclick = () => {
+  modalCrop.classList.add("hidden");
+};
+
+/* Confirmar crop real */
+document.getElementById("confirmar-crop").onclick = () => {
+  const size = 300;
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
+
+  const ctx = canvas.getContext("2d");
+
+  ctx.beginPath();
+  ctx.arc(size/2, size/2, size/2, 0, Math.PI * 2);
+  ctx.clip();
+
+  const img = cropImage;
+
+  const imgW = img.naturalWidth;
+  const imgH = img.naturalHeight;
+
+  const drawSize = size / scale;
+  const sx = (imgW - drawSize) / 2 - (posX / scale);
+  const sy = (imgH - drawSize) / 2 - (posY / scale);
+
+  ctx.drawImage(img, sx, sy, drawSize, drawSize, 0, 0, size, size);
+
+  const final = canvas.toDataURL("image/webp", 1);
+
+  previewFoto.innerHTML = `<img src="${final}">`;
+  previewFoto.classList.remove("default");
+
+  modalCrop.classList.add("hidden");
+};
+
 carregarDados();

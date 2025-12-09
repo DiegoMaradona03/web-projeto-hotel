@@ -50,7 +50,7 @@ async function carregarReservas() {
           <h2>${q.nome || `Quarto ${q.numero}`}</h2>
 
           <p>${q.descricao}</p>
-          <p><strong>Máx. hóspedes:</strong> ${q.quantidadeOspedes || q.quantidadeOspedes === 0 ? q.quantidadeOspedes : "Não informado"}</p>
+          <p><strong>Máx. hóspedes:</strong> ${q.totalOspedes || q.totalOspedes === 0 ? q.totalOspedes : "Não informado"}</p>
           <p><strong>Diária:</strong> R$ ${Number(q.diaria).toFixed(2)}</p>
           <p><strong>Entrada prevista:</strong> ${new Date(new Date(reserva.dataEntradaPrevista).getTime() + (1000 * 60 * 60 * 24)).toLocaleDateString()}</p>
           <p><strong>Saída prevista:</strong> ${new Date(new Date(reserva.dataSaidaPrevista).getTime() + (1000 * 60 * 60 * 24)).toLocaleDateString()}</p>
