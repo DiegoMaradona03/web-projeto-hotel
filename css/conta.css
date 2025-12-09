@@ -159,18 +159,18 @@
 .excluir-area {
     margin-top: 2rem;
     padding-top: 2rem;
-    border-top: 0.125rem solid var(--p3);
+    border-top: 0.125rem solid var(--p5);
     text-align: center;
 }
 
 .excluir-area h2 {
-    color: var(--p4);
+    color: var(--p5);
     margin-bottom: 1rem;
 }
 
 .btn-excluir {
     background-color: var(--p5);
-    color: var(--p1); /* texto sobre vermelho — usa var(--p1) como você pediu */
+    color: var(--p1);
     padding: 0.9rem;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -184,57 +184,7 @@
     box-shadow: 0 0 1rem var(--p5);
 }
 
-/* ===== Modal ===== */
-.modal-excluir {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.modal-content {
-    background-color: var(--t1);
-    padding: 2rem;
-    border-radius: 1rem;
-    max-width: 25rem;
-    width: 100%;
-    border: 0.125rem solid var(--p3);
-    text-align: center;
-    box-shadow: 0 0 1.5rem var(--t3);
-}
-
-.modal-botoes {
-    margin-top: 1.5rem;
-    display: flex;
-    gap: 0.75rem;
-    justify-content: center;
-}
-
-/* botões do modal */
-.btn-cancelar,
-.btn-confirmar {
-    padding: 0.7rem 1.2rem;
-    border-radius: 0.5rem;
-    border: none;
-    cursor: pointer;
-    transition: 0.15s;
-}
-
-.btn-cancelar {
-    background-color: var(--p3);
-    color: var(--p2);
-}
-
-.btn-confirmar {
-    background-color: var(--p5);
-    color: var(--p1);
-}
-
-/* ===== Responsividade ===== */
-@media (max-width: 48rem) { /* 768px */
+@media (max-width: 768px) {
     .config-container {
         margin: 4rem 1.5rem;
         padding: 2rem;
@@ -252,7 +202,7 @@
 
 .input-modal,
 .modal-content input[type="password"] {
-    width: 100%;
+    width: 90%;
     margin-top: 1rem;
     padding: 0.8rem 1rem;
     border-radius: 0.6rem;
@@ -343,7 +293,7 @@
 #modal-excluir-telefone {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.72);
+    background: var(--t1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -443,4 +393,76 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* animação */
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-excluir {
+    position: fixed;
+    inset: 0;
+    background: var(--t1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background-color: var(--t1);
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 25rem;
+    width: 100%;
+    border: 0.125rem solid var(--p3);
+    text-align: center;
+    box-shadow: 0 0 1.5rem var(--t3);
+}
+
+.modal-content input {
+    width: 90%;
+    padding: 0.9rem 1rem;
+    border-radius: 0.7rem;
+    border: 0.125rem solid var(--p3);
+    background-color: var(--p1);
+    color: var(--p2);
+    font-size: 1.05rem;
+    margin-top: 1rem;
+}
+
+.modal-botoes {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.btn-cancelar,
+.btn-confirmar {
+    padding: 0.7rem 1.2rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.btn-cancelar {
+    background-color: var(--p3);
+    color: var(--p2);
+}
+
+.btn-confirmar {
+    background-color: var(--p3);
+    color: var(--p2);
+}
+
+.btn-cancelar:hover {
+    background-color: var(--p5);
+}
+
+.btn-confirmar:hover {
+    background-color: var(--p5);
 }
