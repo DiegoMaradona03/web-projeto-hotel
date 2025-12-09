@@ -187,14 +187,28 @@ document.getElementById("confirmar-excluir").onclick = async () => {
 };
 
 let scale = 1;
+let baseScale = 1;
 let posX = 0;
 let posY = 0;
+
 let dragging = false;
-let startX, startY;
+let startX = 0;
+let startY = 0;
+
+// Touch
+let lastTouchDistance = 0;
+let lastTouchX = 0;
+let lastTouchY = 0;
 
 const modalCrop = document.getElementById("modal-crop");
 const cropImage = document.getElementById("crop-image");
 const zoomRange = document.getElementById("zoom-range");
+const area = document.querySelector(".crop-area");
+
+// Quando escolhe a foto
+fotoInput.addEventListener("click", () => {
+  fotoInput.value = "";
+});
 
 fotoInput.addEventListener("change", (e) => {
   const file = e.target.files[0];
@@ -204,15 +218,32 @@ fotoInput.addEventListener("change", (e) => {
   reader.onload = () => {
     cropImage.src = reader.result;
     modalCrop.classList.remove("hidden");
-    scale = 1;
-    posX = 0;
-    posY = 0;
-    updateTransform();
   };
   reader.readAsDataURL(file);
 });
 
-/* Drag da imagem */
+// Quando a imagem carrega
+cropImage.onload = () => {
+  const areaSize = area.clientWidth;
+
+  const imgW = cropImage.naturalWidth || 1;
+  const imgH = cropImage.naturalHeight || 1;
+
+  // Escala mínima = cobrir o círculo
+  baseScale = Math.max(areaSize / imgW, areaSize / imgH);
+
+  // Sem zoom forçado
+  scale = baseScale;
+  zoomRange.value = 1;
+
+  posX = 0;
+  posY = 0;
+
+  updateTransform();
+};
+
+// ============ MOUSE DRAG ============
+
 cropImage.addEventListener("mousedown", (e) => {
   dragging = true;
   cropImage.style.cursor = "grabbing";
@@ -222,9 +253,7 @@ cropImage.addEventListener("mousedown", (e) => {
 
 window.addEventListener("mousemove", (e) => {
   if (!dragging) return;
-  posX = e.clientX - startX;
-  posY = e.clientY - startY;
-  updateTransform();
+  moveImage(e.clientX, e.clientY);
 });
 
 window.addEventListener("mouseup", () => {
@@ -232,11 +261,96 @@ window.addEventListener("mouseup", () => {
   cropImage.style.cursor = "grab";
 });
 
-/* Zoom */
+// ============ TOUCH (CELULAR) ============
+
+cropImage.addEventListener("touchstart", (e) => {
+  if (e.touches.length === 1) {
+    const t = e.touches[0];
+    lastTouchX = t.clientX;
+    lastTouchY = t.clientY;
+  }
+
+  if (e.touches.length === 2) {
+    lastTouchDistance = getTouchDistance(e.touches);
+  }
+}, { passive: false });
+
+cropImage.addEventListener("touchmove", (e) => {
+  e.preventDefault();
+
+  if (e.touches.length === 1) {
+    const t = e.touches[0];
+    const dx = t.clientX - lastTouchX;
+    const dy = t.clientY - lastTouchY;
+
+    posX += dx;
+    posY += dy;
+
+    lastTouchX = t.clientX;
+    lastTouchY = t.clientY;
+
+    limitPosition();
+    updateTransform();
+  }
+
+  if (e.touches.length === 2) {
+    const dist = getTouchDistance(e.touches);
+    const diff = dist - lastTouchDistance;
+
+    scale += diff * 0.003;
+
+    if (scale < baseScale) scale = baseScale;
+    if (scale > 3) scale = 3;
+
+    lastTouchDistance = dist;
+
+    limitPosition();
+    updateTransform();
+  }
+}, { passive: false });
+
+// Medir distância entre dois toques (pinch zoom)
+function getTouchDistance(touches) {
+  const dx = touches[0].clientX - touches[1].clientX;
+  const dy = touches[0].clientY - touches[1].clientY;
+  return Math.sqrt(dx * dx + dy * dy);
+}
+
+// ============ ZOOM (SLIDER) ============
+
 zoomRange.addEventListener("input", () => {
-  scale = zoomRange.value;
+  const zoomValue = parseFloat(zoomRange.value);
+  scale = baseScale * zoomValue;
+
+  limitPosition();
   updateTransform();
 });
+
+// ============ CONTROLE DE MOVIMENTO ============
+
+function moveImage(x, y) {
+  posX = x - startX;
+  posY = y - startY;
+
+  limitPosition();
+  updateTransform();
+}
+
+function limitPosition() {
+  const areaSize = area.clientWidth;
+
+  const imgW = cropImage.naturalWidth * scale;
+  const imgH = cropImage.naturalHeight * scale;
+
+  const limitX = (imgW - areaSize) / 2;
+  const limitY = (imgH - areaSize) / 2;
+
+  if (posX > limitX) posX = limitX;
+  if (posX < -limitX) posX = -limitX;
+
+  if (posY > limitY) posY = limitY;
+  if (posY < -limitY) posY = -limitY;
+}
 
 function updateTransform() {
   cropImage.style.transform = `
@@ -246,39 +360,56 @@ function updateTransform() {
   `;
 }
 
-/* Cancelar */
+// ============ BOTÕES ==================
+
+// Cancelar
 document.getElementById("cancelar-crop").onclick = () => {
   modalCrop.classList.add("hidden");
 };
 
-/* Confirmar crop real */
+// Confirmar recorte real
 document.getElementById("confirmar-crop").onclick = () => {
-  const size = 300;
+  const outputSize = 1024;
   const canvas = document.createElement("canvas");
-  canvas.width = size;
-  canvas.height = size;
+  canvas.width = outputSize;
+  canvas.height = outputSize;
 
   const ctx = canvas.getContext("2d");
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = "high";
 
+  // Máscara circular
   ctx.beginPath();
-  ctx.arc(size/2, size/2, size/2, 0, Math.PI * 2);
+  ctx.arc(outputSize / 2, outputSize / 2, outputSize / 2, 0, Math.PI * 2);
   ctx.clip();
 
-  const img = cropImage;
+  const displaySize = area.clientWidth;
 
-  const imgW = img.naturalWidth;
-  const imgH = img.naturalHeight;
+  const imgW = cropImage.naturalWidth;
+  const imgH = cropImage.naturalHeight;
 
-  const drawSize = size / scale;
-  const sx = (imgW - drawSize) / 2 - (posX / scale);
-  const sy = (imgH - drawSize) / 2 - (posY / scale);
+  // quanto da imagem aparece na tela
+  const visibleW = displaySize / scale;
+  const visibleH = displaySize / scale;
 
-  ctx.drawImage(img, sx, sy, drawSize, drawSize, 0, 0, size, size);
+  const sx = (imgW / 2 - visibleW / 2) - (posX / scale);
+  const sy = (imgH / 2 - visibleH / 2) - (posY / scale);
+
+  ctx.drawImage(
+    cropImage,
+    sx, sy,
+    visibleW, visibleH,
+    0, 0,
+    outputSize, outputSize
+  );
 
   const final = canvas.toDataURL("image/webp", 1);
 
   previewFoto.innerHTML = `<img src="${final}">`;
   previewFoto.classList.remove("default");
+
+  // Guarda a imagem recortada pro envio real depois
+  previewFoto.dataset.finalImage = final;
 
   modalCrop.classList.add("hidden");
 };

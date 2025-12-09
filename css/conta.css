@@ -209,7 +209,9 @@
 .foto-preview img {
     width: 100%;
     height: 100%;
+    border-radius: 50%;
     object-fit: cover;
+    display: block;
 }
 
 /* animação */
@@ -351,73 +353,63 @@
     border: none;
 }
 
-/* Modal do crop */
+/* Modal escuro */
 #modal-crop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 99999;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
-#modal-crop.hidden {
-  display: none;
-}
-
-/* Caixa branca */
+/* Container */
 .crop-container {
-  background: #111;
-  padding: 1.2rem;
-  border-radius: 1rem;
-  width: 320px;
+    background: #111;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 90vw;
+    max-width: 500px;
+    text-align: center;
 }
 
-/* Área do recorte */
+/* Área da imagem */
 .crop-area {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1/1;
-  overflow: hidden;
-  border-radius: 1rem;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
 }
 
-/* Imagem movível */
+/* Imagem */
 #crop-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  cursor: grab;
-  user-select: none;
-  max-width: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    user-select: none;
+    transform: translate(-50%, -50%);
+    cursor: grab;
 }
 
-/* Máscara estilo Discord */
+/* Máscara circular */
 .crop-mask {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-  pointer-events: none;
-}
-
-.crop-mask::after {
-  content: '';
-  position: absolute;
-  inset: 15%;
-  border-radius: 50%;
-  box-shadow: 0 0 0 9999px rgba(0,0,0,0.65);
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.6);
+    mask: radial-gradient(circle at center, transparent 70%, black 71%);
 }
 
 /* Controles */
 .crop-controls {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+    margin-top: 1rem;
 }
 
 #zoom-range {
-  width: 100%;
+    width: 100%;
+}
+
+.hidden {
+    display: none !important;
 }
