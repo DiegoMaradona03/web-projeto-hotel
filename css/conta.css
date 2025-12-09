@@ -201,8 +201,8 @@
 }
 
 .input-modal,
-.modal-content input[type="password"] {
-    width: 90%;
+.modal-content input {
+    width: 100%;
     margin-top: 1rem;
     padding: 0.8rem 1rem;
     border-radius: 0.6rem;
@@ -210,6 +210,7 @@
     background-color: var(--p1);
     color: var(--p2);
     font-size: 1rem;
+    margin-left: -1rem;
 }
 
 .telefones-container {
@@ -329,6 +330,7 @@
     color: var(--p2);
     font-size: 1.05rem;
     margin-top: 1rem;
+    margin-left: -1rem;
 }
 
 /* títulos dos modais */
@@ -423,7 +425,7 @@
 }
 
 .modal-content input {
-    width: 90%;
+    width: 100%;
     padding: 0.9rem 1rem;
     border-radius: 0.7rem;
     border: 0.125rem solid var(--p3);
@@ -431,6 +433,7 @@
     color: var(--p2);
     font-size: 1.05rem;
     margin-top: 1rem;
+    margin-left: -1rem;
 }
 
 .modal-botoes {
