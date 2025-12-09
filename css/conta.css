@@ -28,31 +28,6 @@
     margin-bottom: 1rem;
 }
 
-/* botões pequenos estilo padrão */
-.btn-editar,
-.btn-cancelar-edicao {
-    padding: 0.5rem 0.9rem;
-    border-radius: 0.5rem;
-    border: 0.125rem solid var(--p3);
-    background-color: var(--p3);
-    color: var(--p2);
-    cursor: pointer;
-    font-family: 'Mr Darcy W01 Regular', serif;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-    font-size: 0.95rem;
-}
-
-.btn-editar:hover,
-.btn-cancelar-edicao:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 0.625rem var(--p3);
-}
-
-/* cancelar começa hidden */
-.btn-cancelar-edicao.hidden {
-    display: none;
-}
-
 /* ===== Formulário ===== */
 .config-form {
     display: flex;
@@ -142,19 +117,6 @@
 }
 
 /* largura automática e altura igual */
-.btn-editar,
-.btn-salvar,
-.btn-cancelar-edicao {
-    width: auto !important;
-    padding: 0.7rem 1.4rem;
-    border-radius: 0.6rem;
-    border: 0.125rem solid var(--p3);
-    background-color: var(--p3);
-    color: var(--p2);
-    font-size: 1rem;
-    cursor: pointer;
-    font-family: 'Mr Darcy W01 Regular', serif;
-}
 
 .excluir-area {
     margin-top: 2rem;
@@ -166,22 +128,6 @@
 .excluir-area h2 {
     color: var(--p5);
     margin-bottom: 1rem;
-}
-
-.btn-excluir {
-    background-color: var(--p5);
-    color: var(--p1);
-    padding: 0.9rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    border: 0.125rem solid var(--p3);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-    font-size: 1.2rem;
-}
-
-.btn-excluir:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 1rem var(--p5);
 }
 
 @media (max-width: 768px) {
@@ -198,19 +144,6 @@
     .btn-salvar {
         width: 100%;
     }
-}
-
-.input-modal,
-.modal-content input {
-    width: 100%;
-    margin-top: 1rem;
-    padding: 0.8rem 1rem;
-    border-radius: 0.6rem;
-    border: 0.125rem solid var(--p3);
-    background-color: var(--p1);
-    color: var(--p2);
-    font-size: 1rem;
-    margin-left: -1rem;
 }
 
 .telefones-container {
@@ -253,129 +186,11 @@
     margin-left: 0.5rem;
 }
 
-/* botão “+ adicionar telefone” */
-#btn-add-telefone {
-    width: 100%;
-    background-color: var(--p4);
-    font-size: 1.1rem;
-    padding: 0.9rem;
-    border-radius: 0.8rem;
-    transition: 0.2s ease;
-}
-#btn-add-telefone:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 0.8rem var(--p4);
-}
-
-/* botões editar/excluir na lista */
-.btn-tel {
-    background-color: var(--p3);
-    color: var(--p2);
-    border-radius: 0.5rem;
-    padding: 0.4rem 0.7rem;
-    border: none;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-.btn-tel:hover {
-    background-color: var(--p4);
-}
-
-.btn-tel-del {
-    background-color: var(--p5);
-    color: var(--p1);
-}
-.btn-tel-del:hover {
-    background-color: var(--p6);
-    box-shadow: 0 0 0.7rem var(--p5);
-}
-
-#modal-telefone,
-#modal-excluir-telefone {
-    position: fixed;
-    inset: 0;
-    background: var(--t1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 99999;
-}
-
-#modal-telefone .modal-content,
-#modal-excluir-telefone .modal-content {
-    width: 90%;
-    max-width: 24rem;
-    padding: 2rem;
-    background-color: var(--t1);
-    border-radius: 1.2rem;
-    box-shadow: 0 0 1.8rem var(--t3);
-    border: 0.125rem solid var(--p3);
-    text-align: center;
-    animation: aparecer 0.25s ease;
-}
-
 /* animação */
 @keyframes aparecer {
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
 }
-
-/* input do número */
-#telefone-input {
-    width: 100%;
-    padding: 0.9rem 1rem;
-    border-radius: 0.7rem;
-    border: 0.125rem solid var(--p3);
-    background-color: var(--p1);
-    color: var(--p2);
-    font-size: 1.05rem;
-    margin-top: 1rem;
-    margin-left: -1rem;
-}
-
-/* títulos dos modais */
-#modal-telefone h2,
-#modal-excluir-telefone h2 {
-    color: var(--p3);
-    margin-bottom: 1rem;
-}
-
-/* área dos botões dentro do modal */
-#modal-telefone .modal-botoes,
-#modal-excluir-telefone .modal-botoes {
-    margin-top: 1.5rem;
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;
-}
-
-/* Botões dentro do modal */
-#modal-telefone .btn-confirmar,
-#modal-excluir-telefone .btn-confirmar {
-    background-color: var(--p5);
-    color: var(--p1);
-    border: none;
-    padding: 0.8rem 1.3rem;
-    border-radius: 0.6rem;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-#modal-telefone .btn-cancelar,
-#modal-excluir-telefone .btn-cancelar {
-    background-color: var(--p3);
-    color: var(--p2);
-    padding: 0.8rem 1.3rem;
-    border-radius: 0.6rem;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-#modal-telefone .btn-confirmar:hover,
-#modal-excluir-telefone .btn-confirmar:hover {
-    background-color: #a00000;
-}
-
 
 .foto-preview {
     width: 100%;
@@ -463,9 +278,75 @@
 }
 
 .btn-cancelar:hover {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transform: scale(1.03);
     background-color: var(--p5);
+    box-shadow: 0 0 1rem var(--p5);
 }
 
 .btn-confirmar:hover {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transform: scale(1.03);
     background-color: var(--p5);
+    box-shadow: 0 0 1rem var(--p5);
+}
+
+.btn-editar,
+.btn-salvar,
+.btn-cancelar-edicao {
+    width: auto !important;
+    padding: 0.7rem 1.4rem;
+    border-radius: 0.6rem;
+    border: 0.125rem solid var(--p3);
+    background-color: var(--p3);
+    color: var(--p2);
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Mr Darcy W01 Regular', serif;
+}
+
+.btn-editar:hover,
+.btn-salvar:hover,
+.btn-cancelar-edicao:hover {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transform: scale(1.03);
+    box-shadow: 0 0 1rem var(--p5);
+}
+
+.btn-cancelar-edicao.hidden {
+    display: none;
+}
+
+.btn-excluir {
+    background-color: var(--p5);
+    color: var(--p1);
+    padding: 0.9rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border: none;
+}
+
+.btn-excluir:hover {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transform: scale(1.03);
+    box-shadow: 0 0 1rem var(--p5);
+}
+
+
+/* botões editar/excluir na lista */
+.btn-tel {
+    background-color: var(--p3);
+    color: var(--p2);
+    border-radius: 0.5rem;
+    padding: 0.4rem 0.7rem;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-tel-del {
+    background-color: var(--p5);
+    color: var(--p2);
+    border: none;
 }
