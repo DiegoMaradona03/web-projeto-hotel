@@ -401,7 +401,7 @@
     to { opacity: 1; transform: scale(1); }
 }
 
-.modal-excluir {
+.modal {
     position: fixed;
     inset: 0;
     background: var(--t1);
