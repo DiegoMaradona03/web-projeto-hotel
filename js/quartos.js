@@ -1,5 +1,3 @@
-import axios from "https://cdn.skypack.dev/axios";
-
 const API_URL = "https://api-projeto-hotel.vercel.app";
 const container = document.querySelector(".quartos-container");
 const usuario = JSON.parse(localStorage.getItem("usuario"));

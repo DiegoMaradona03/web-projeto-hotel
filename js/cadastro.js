@@ -1,5 +1,3 @@
-import axios from "https://cdn.skypack.dev/axios";
-
 const form = document.querySelector('form');
 const URL_API = 'https://api-projeto-hotel.vercel.app/usuarios';
 
